@@ -3,8 +3,8 @@ var Metalsmith = require('./node_modules/metalsmith'),
 
 Metalsmith(__dirname)
   .source('./src')
-  .destination('./build')
   .use(markdown())
+  .destination('./build')
   .build(function(err) {
     if (err) throw err;
   })
