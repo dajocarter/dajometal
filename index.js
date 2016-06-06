@@ -35,6 +35,10 @@ Metalsmith(__dirname)
     }))
     .use(autoprefixer())
   )
+  .use(browserSync({
+    server: 'build',
+    files: ['src/**/*', 'templates/**/*.hbs', 'partials/**/*.hbs']
+  }))
   .build(function(err) {
     if (err) throw err;
   })
