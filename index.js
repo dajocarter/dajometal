@@ -11,8 +11,10 @@ var Metalsmith = require('./node_modules/metalsmith'),
 
 Metalsmith(__dirname)
   .source('./src')
-  .use(markdown())
   .destination('./build')
+  .use(ignore([
+    'scss/vendor/*'
+  ]))
   .build(function(err) {
     if (err) throw err;
   })
