@@ -15,6 +15,17 @@ Metalsmith(__dirname)
   .use(ignore([
     'scss/vendor/*'
   ]))
+  .use(branch('**/*.md')
+    .use(markdown())
+    .use(permalinks())
+    .use(layouts({
+      engine: 'handlebars',
+      default: 'default.hbs',
+      directory: 'templates',
+      partials: 'partials',
+      rename: true
+    }))
+  )
   .build(function(err) {
     if (err) throw err;
   })
