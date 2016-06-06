@@ -26,6 +26,15 @@ Metalsmith(__dirname)
       rename: true
     }))
   )
+  .use(branch('scss/*.scss')
+    .use(sass({
+      outputDir: 'css/',
+      outputStyle: 'expanded',
+      sourceMap: true,
+      sourceMapContents: true
+    }))
+    .use(autoprefixer())
+  )
   .build(function(err) {
     if (err) throw err;
   })
