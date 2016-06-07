@@ -2,6 +2,7 @@ var Metalsmith = require('./node_modules/metalsmith'),
   autoprefixer = require('./node_modules/metalsmith-autoprefixer'),
   branch = require('./node_modules/metalsmith-branch')
   browserSync = require('./node_modules/metalsmith-browser-sync'),
+  collections = require('./node_modules/metalsmith-collections'),
   ignore = require('./node_modules/metalsmith-ignore'),
   inPlace = require('./node_modules/metalsmith-in-place'),
   layouts = require('./node_modules/metalsmith-layouts'),
@@ -15,9 +16,20 @@ Metalsmith(__dirname)
   .use(ignore([
     'scss/vendor/*'
   ]))
+  .use(collections({
+    'posts': 'blog/*.md'
+  }))
   .use(branch('**/*.md')
     .use(markdown())
-    .use(permalinks())
+    .use(permalinks({
+      relative: false,
+      linksets: [{
+        match: {
+          collection: 'posts'
+        },
+        pattern: 'blog/:title'
+      }]
+    }))
     .use(layouts({
       engine: 'handlebars',
       default: 'default.hbs',
