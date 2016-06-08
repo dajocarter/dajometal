@@ -1,14 +1,15 @@
 var gulp = require('gulp'),
   $ = require('gulp-load-plugins')(),
   browserSync = require('browser-sync').create(),
-  Metalsmith = require('./node_modules/metalsmith'),
-  branch = require('./node_modules/metalsmith-branch'),
-  collections = require('./node_modules/metalsmith-collections'),
-  ignore = require('./node_modules/metalsmith-ignore'),
-  inPlace = require('./node_modules/metalsmith-in-place'),
-  layouts = require('./node_modules/metalsmith-layouts'),
-  markdown = require('./node_modules/metalsmith-markdown'),
-  permalinks = require('./node_modules/metalsmith-permalinks');
+  Metalsmith = require('node_modules/metalsmith'),
+  branch = require('node_modules/metalsmith-branch'),
+  collections = require('node_modules/metalsmith-collections'),
+  drafts = require('node_modules/metalsmith-drafts'),
+  ignore = require('node_modules/metalsmith-ignore'),
+  inPlace = require('node_modules/metalsmith-in-place'),
+  layouts = require('node_modules/metalsmith-layouts'),
+  markdown = require('node_modules/metalsmith-markdown'),
+  permalinks = require('node_modules/metalsmith-permalinks');
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -26,9 +27,9 @@ gulp.task('img', function() {
   return gulp.src(['src/img/*.{png,PNG,jpg,JPG,jpeg,JPEG,gif,GIF}'], {
       base: '.'
     })
-    .pipe($.newer('./src/img/'))
+    .pipe($.newer('src/img/'))
     .pipe($.imagemin())
-    .pipe(gulp.dest('./build/img/'))
+    .pipe(gulp.dest('build/img/'))
     .pipe(browserSync.stream());
 });
 
@@ -39,7 +40,7 @@ gulp.task('js', function() {
     }))
     .pipe($.uglify(false))
     //.pipe($.rename('master.min.js'))
-    .pipe(gulp.dest('./build/js'))
+    .pipe(gulp.dest('build/js'))
     .pipe(browserSync.stream());
 });
 
