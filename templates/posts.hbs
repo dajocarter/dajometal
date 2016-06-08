@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <link href="css/master.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <header>
+    <p>
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+    </p>
+  </header>
+  <h1>{{ title }}</h1>
+  {{#if collection.posts}}
+    {{#if collection.posts.length > 0}}
+      {{#each collection.posts}}
+        <h2><a href="/">{{../title}}</a></h2>
+      {{/each}}
+    {{/if}}
+  {{/if}}
+</body>
+</html>
