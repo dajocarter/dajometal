@@ -68,9 +68,14 @@ gulp.task('metalsmith', function() {
     'scss/'
   ]))
   .use(collections({
-    'posts': 'blog/*.md'
+    posts: {
+      pattern: 'blog/*.md',
+      sortBy: 'date',
+      reverse: true
+    }
   }))
   .use(branch('**/*.md')
+    .use(drafts())
     .use(markdown())
     .use(permalinks({
       relative: false,
