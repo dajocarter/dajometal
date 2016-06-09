@@ -64,9 +64,9 @@ gulp.task('metalsmith', function() {
   .source('src')
   .destination('build')
   .use(ignore([
-    'img/',
-    'js/',
-    'scss/'
+    'img/**/*',
+    'js/**/*',
+    'scss/**/*'
   ]))
   .use(drafts())
   .use(collections({
