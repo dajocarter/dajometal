@@ -37,7 +37,8 @@
   },
   "scripts": {
     "serve": "./node_modules/.bin/gulp serve",
-    "build": "./node_modules/.bin/gulp build"
+    "build": "./node_modules/.bin/gulp build",
+    "deploy": "./node_modules/.bin/gulp build && surge --project ./build/ --domain dajometal.surge.sh"
   },
   "keywords": [
     "dajocarter",
