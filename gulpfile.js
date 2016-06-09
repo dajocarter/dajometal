@@ -1,15 +1,16 @@
 var gulp = require('gulp'),
   $ = require('gulp-load-plugins')(),
   browserSync = require('browser-sync').create(),
-  Metalsmith = require('node_modules/metalsmith'),
-  branch = require('node_modules/metalsmith-branch'),
-  collections = require('node_modules/metalsmith-collections'),
-  drafts = require('node_modules/metalsmith-drafts'),
-  ignore = require('node_modules/metalsmith-ignore'),
-  inPlace = require('node_modules/metalsmith-in-place'),
-  layouts = require('node_modules/metalsmith-layouts'),
-  markdown = require('node_modules/metalsmith-markdown'),
-  permalinks = require('node_modules/metalsmith-permalinks');
+  Metalsmith = require('./node_modules/metalsmith'),
+  branch = require('./node_modules/metalsmith-branch'),
+  collections = require('./node_modules/metalsmith-collections'),
+  drafts = require('./node_modules/metalsmith-drafts'),
+  excerpts = require('./node_modules/metalsmith-excerpts'),
+  ignore = require('./node_modules/metalsmith-ignore'),
+  inPlace = require('./node_modules/metalsmith-in-place'),
+  layouts = require('./node_modules/metalsmith-layouts'),
+  markdown = require('./node_modules/metalsmith-markdown'),
+  permalinks = require('./node_modules/metalsmith-permalinks');
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
