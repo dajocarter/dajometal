@@ -68,36 +68,35 @@ gulp.task('metalsmith', function() {
     'js/',
     'scss/'
   ]))
+  .use(drafts())
   .use(collections({
     posts: {
-      pattern: 'blog/*.md',
+      pattern: 'posts/*.md',
       sortBy: 'date',
       reverse: true
     }
   }))
-  .use(branch('**/*.md')
-    .use(drafts())
-    .use(markdown())
-    .use(permalinks({
-      relative: false,
-      linksets: [{
-        match: {
-          collection: 'posts'
-        },
-        pattern: 'blog/:title'
-      }]
-    }))
-    .use(layouts({
-      engine: 'handlebars',
-      default: 'default.hbs',
-      directory: 'templates',
-      partials: 'partials',
-      rename: true
-    }))
-  )
+  .use(markdown())
+  .use(excerpts())
+  .use(permalinks({
+    relative: false,
+    linksets: [{
+      match: {
+        collection: 'posts'
+      },
+      pattern: 'blog/:title'
+    }]
+  }))
+  .use(layouts({
+    engine: 'handlebars',
+    default: 'default.hbs',
+    directory: 'templates',
+    partials: 'partials',
+    rename: true
+  }))
   .build(function(err) {
     if (err) console.log(err);
-  })
+  });
 });
 
 gulp.task('watch', function() {

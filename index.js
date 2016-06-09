@@ -1,41 +1,48 @@
 var Metalsmith = require('./node_modules/metalsmith'),
   branch = require('./node_modules/metalsmith-branch')
   collections = require('./node_modules/metalsmith-collections'),
+  drafts = require('./node_modules/metalsmith-drafts'),
+  excerpts = require('./node_modules/metalsmith-excerpts'),
   ignore = require('./node_modules/metalsmith-ignore'),
   inPlace = require('./node_modules/metalsmith-in-place'),
   layouts = require('./node_modules/metalsmith-layouts'),
   markdown = require('./node_modules/metalsmith-markdown'),
-  permalinks = require('./node_modules/metalsmith-permalinks'),
+  permalinks = require('./node_modules/metalsmith-permalinks');
 
 Metalsmith(__dirname)
-  .source('./src')
-  .destination('./build')
+  .source('src')
+  .destination('build')
   .use(ignore([
-    'scss/vendor/*'
+    'img/',
+    'js/',
+    'scss/'
   ]))
+  .use(drafts())
   .use(collections({
-    'posts': 'blog/*.md'
+    posts: {
+      pattern: 'posts/*.md',
+      sortBy: 'date',
+      reverse: true
+    }
   }))
-  .use(branch('**/*.md')
-    .use(markdown())
-    .use(permalinks({
-      relative: false,
-      linksets: [{
-        match: {
-          collection: 'posts'
-        },
-        pattern: 'blog/:title'
-      }]
-    }))
-    .use(layouts({
-      engine: 'handlebars',
-      default: 'default.hbs',
-      directory: 'templates',
-      partials: 'partials',
-      rename: true
-    }))
-  )
+  .use(markdown())
+  .use(excerpts())
+  .use(permalinks({
+    relative: false,
+    linksets: [{
+      match: {
+        collection: 'posts'
+      },
+      pattern: 'blog/:title'
+    }]
+  }))
+  .use(layouts({
+    engine: 'handlebars',
+    default: 'default.hbs',
+    directory: 'templates',
+    partials: 'partials',
+    rename: true
   }))
   .build(function(err) {
-    if (err) throw err;
-  })
+    if (err) console.log(err);
+  });
