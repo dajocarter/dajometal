@@ -54,7 +54,7 @@ gulp.task('sass', function() {
     .pipe($.autoprefixer({
       browsers: AUTOPREFIXER_BROWSERS
     }))
-    .pipe($.sourcemaps.write())
+    .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('build/css'))
     .pipe(browserSync.stream());
 });
@@ -113,4 +113,6 @@ gulp.task('browserSync', function() {
   });
 });
 
-gulp.task('default', ['metalsmith', 'browserSync', 'watch']);
+gulp.task('build', ['metalsmith', 'img', 'js', 'sass']);
+
+gulp.task('serve', ['build', 'browserSync', 'watch']);
