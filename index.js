@@ -3,11 +3,15 @@ var Metalsmith = require('./node_modules/metalsmith'),
   collections = require('./node_modules/metalsmith-collections'),
   drafts = require('./node_modules/metalsmith-drafts'),
   excerpts = require('./node_modules/metalsmith-excerpts'),
+  emoji = require('./node_modules/markdown-it-emoji'),
   ignore = require('./node_modules/metalsmith-ignore'),
   inPlace = require('./node_modules/metalsmith-in-place'),
   layouts = require('./node_modules/metalsmith-layouts'),
-  markdown = require('./node_modules/metalsmith-markdown'),
+  md = require('./node_modules/metalsmith-markdownit'),
   permalinks = require('./node_modules/metalsmith-permalinks');
+
+var markdown = md('default');
+markdown.parser.use(emoji);
 
 Metalsmith(__dirname)
   .source('src')
@@ -25,7 +29,7 @@ Metalsmith(__dirname)
       reverse: true
     }
   }))
-  .use(markdown())
+  .use(markdown)
   .use(excerpts())
   .use(permalinks({
     relative: false,
