@@ -1,14 +1,11 @@
 var Metalsmith = require('./node_modules/metalsmith'),
-  autoprefixer = require('./node_modules/metalsmith-autoprefixer'),
   branch = require('./node_modules/metalsmith-branch')
-  browserSync = require('./node_modules/metalsmith-browser-sync'),
   collections = require('./node_modules/metalsmith-collections'),
   ignore = require('./node_modules/metalsmith-ignore'),
   inPlace = require('./node_modules/metalsmith-in-place'),
   layouts = require('./node_modules/metalsmith-layouts'),
   markdown = require('./node_modules/metalsmith-markdown'),
   permalinks = require('./node_modules/metalsmith-permalinks'),
-  sass = require('./node_modules/metalsmith-sass');
 
 Metalsmith(__dirname)
   .source('./src')
@@ -38,18 +35,6 @@ Metalsmith(__dirname)
       rename: true
     }))
   )
-  .use(branch('scss/*.scss')
-    .use(sass({
-      outputDir: 'css/',
-      outputStyle: 'expanded',
-      sourceMap: true,
-      sourceMapContents: true
-    }))
-    .use(autoprefixer())
-  )
-  .use(browserSync({
-    server: 'build',
-    files: ['src/**/*', 'templates/**/*.hbs', 'partials/**/*.hbs']
   }))
   .build(function(err) {
     if (err) throw err;
