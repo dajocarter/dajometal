@@ -14,12 +14,11 @@
     </p>
   </header>
   <h1>{{ title }}</h1>
-  {{#if collection.posts}}
-    {{#if collection.posts.length > 0}}
-      {{#each collection.posts}}
-        <h2><a href="/">{{../title}}</a></h2>
-      {{/each}}
-    {{/if}}
+  {{#if collections.posts}}
+    {{#each collections.posts}}
+      <h2><a href="/{{ this.path }}">{{ this.title }}</a></h2>
+      {{{ this.excerpt }}}
+    {{/each}}
   {{/if}}
 </body>
 </html>
