@@ -1,2 +1,2 @@
 # dajometal
-[ ![Codeship Status for dajocarter/dajometal](https://codeship.com/projects/b3eafb60-1088-0134-83a3-2a42c1ba701a/status?branch=master)](https://codeship.com/projects/157017)
+[ ![Codeship Status for dajocarter/dajometal](https://codeship.com/projects/8a28b7d0-108b-0134-9c02-3ad85fa354c7/status?branch=master)](https://codeship.com/projects/157026)
