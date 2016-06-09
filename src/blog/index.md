@@ -1,6 +1,6 @@
 ---
 title: 'Blog Posts'
 descripttion: 'Blog posts by dajocarter'
-template: posts.hbs
+layout: posts.hbs
 permalinks: false
 ---
