@@ -31,10 +31,8 @@ var markdown = md('default');
 markdown.parser.use(emoji);
 
 gulp.task('img', function() {
-  return gulp.src(['src/img/*.{png,PNG,jpg,JPG,jpeg,JPEG,gif,GIF}'], {
-      base: '.'
-    })
-    .pipe($.newer('src/img/'))
+  return gulp.src('src/img/*.{png,PNG,jpg,JPG,jpeg,JPEG,gif,GIF}')
+    .pipe($.newer('build/img/'))
     .pipe($.imagemin())
     .pipe(gulp.dest('build/img/'))
     .pipe(browserSync.stream());
