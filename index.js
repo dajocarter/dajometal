@@ -1,6 +1,7 @@
 var Metalsmith = require('./node_modules/metalsmith'),
   branch = require('./node_modules/metalsmith-branch')
   collections = require('./node_modules/metalsmith-collections'),
+  dateFormatter = require('./node_modules/metalsmith-date-formatter'),
   drafts = require('./node_modules/metalsmith-drafts'),
   excerpts = require('./node_modules/metalsmith-excerpts'),
   emoji = require('./node_modules/markdown-it-emoji'),
@@ -28,6 +29,12 @@ Metalsmith(__dirname)
       sortBy: 'date',
       reverse: true
     }
+  }))
+  .use(dateFormatter({
+    dates: [{
+      key: 'published',
+      format: 'MMMM Do, YYYY'
+    }]
   }))
   .use(markdown)
   .use(excerpts())
