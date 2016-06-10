@@ -69,6 +69,7 @@ gulp.task('metalsmith', function() {
   Metalsmith(__dirname)
   .source('src')
   .destination('build')
+  .clean(false)
   .use(ignore([
     'img/**/*',
     'js/**/*',

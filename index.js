@@ -18,6 +18,7 @@ markdown.parser.use(emoji);
 Metalsmith(__dirname)
   .source('src')
   .destination('build')
+  .clean(false)
   .use(ignore([
     'img/**/*',
     'js/**/*',
