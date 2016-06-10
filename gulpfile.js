@@ -12,6 +12,7 @@ var gulp = require('gulp'),
   inPlace = require('./node_modules/metalsmith-in-place'),
   layouts = require('./node_modules/metalsmith-layouts'),
   md = require('./node_modules/metalsmith-markdownit'),
+  metadata = require('./node_modules/metalsmith-metadata'),
   permalinks = require('./node_modules/metalsmith-permalinks');
 
 var AUTOPREFIXER_BROWSERS = [
@@ -74,6 +75,9 @@ gulp.task('metalsmith', function() {
     'scss/**/*'
   ]))
   .use(drafts())
+  .use(metadata({
+    site: 'config.json'
+  }))
   .use(collections({
     posts: {
       pattern: 'posts/*.md',
