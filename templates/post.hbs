@@ -2,7 +2,10 @@
 
     <div class="content">
       <h1>{{ title }}</h1>
-      <time>{{ date }}</time>
+      <div class="author">
+        <div class="avatar"></div>
+        <p>Written by {{ site.author.name }} on <time>{{ published }}</time>.</p>
+      </div>
       {{{ contents }}}
     </div>
 {{> footer }}

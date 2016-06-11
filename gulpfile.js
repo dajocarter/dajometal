@@ -4,6 +4,7 @@ var gulp = require('gulp'),
   Metalsmith = require('./node_modules/metalsmith'),
   branch = require('./node_modules/metalsmith-branch'),
   collections = require('./node_modules/metalsmith-collections'),
+  dateFormatter = require('./node_modules/metalsmith-date-formatter'),
   drafts = require('./node_modules/metalsmith-drafts'),
   emoji = require('./node_modules/markdown-it-emoji'),
   excerpts = require('./node_modules/metalsmith-excerpts'),
@@ -11,6 +12,7 @@ var gulp = require('gulp'),
   inPlace = require('./node_modules/metalsmith-in-place'),
   layouts = require('./node_modules/metalsmith-layouts'),
   md = require('./node_modules/metalsmith-markdownit'),
+  metadata = require('./node_modules/metalsmith-metadata'),
   permalinks = require('./node_modules/metalsmith-permalinks');
 
 var AUTOPREFIXER_BROWSERS = [
@@ -29,10 +31,8 @@ var markdown = md('default');
 markdown.parser.use(emoji);
 
 gulp.task('img', function() {
-  return gulp.src(['src/img/*.{png,PNG,jpg,JPG,jpeg,JPEG,gif,GIF}'], {
-      base: '.'
-    })
-    .pipe($.newer('src/img/'))
+  return gulp.src('src/img/*.{png,PNG,jpg,JPG,jpeg,JPEG,gif,GIF}')
+    .pipe($.newer('build/img/'))
     .pipe($.imagemin())
     .pipe(gulp.dest('build/img/'))
     .pipe(browserSync.stream());
@@ -67,18 +67,28 @@ gulp.task('metalsmith', function() {
   Metalsmith(__dirname)
   .source('src')
   .destination('build')
+  .clean(false)
   .use(ignore([
     'img/**/*',
     'js/**/*',
     'scss/**/*'
   ]))
   .use(drafts())
+  .use(metadata({
+    site: 'config.json'
+  }))
   .use(collections({
     posts: {
       pattern: 'posts/*.md',
       sortBy: 'date',
       reverse: true
     }
+  }))
+  .use(dateFormatter({
+    dates: [{
+      key: 'published',
+      format: 'MMMM Do, YYYY'
+    }]
   }))
   .use(markdown)
   .use(excerpts())
