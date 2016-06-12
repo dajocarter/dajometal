@@ -1,7 +1,7 @@
-<ul class="nav">
+<ul class="nav social">
   {{#each site.social}}
     <li>
-      <a href="{{ this.link }}" title="{{ this.title }} {{ this.handle }}">
+      <a class="{{ this.title }}" href="{{ this.link }}" title="{{ this.title }} {{ this.handle }}">
         <i class="icon {{ this.icon }}"></i>
       </a>
     </li>
