@@ -1,11 +1,20 @@
 {{> header }}
+    
+    <article class="post">
+      <header style="background-image:url('/img/{{ featImg }}');">
+        <div class="overlay">
+          <div class="window">
+            <h1>{{ title }}</h1>
+          </div>
+        </div>
+      </header>
 
-    <div class="content">
-      <h1>{{ title }}</h1>
-      <div class="author">
-        <div class="avatar"></div>
-        <p>Written by {{ site.author.name }} on <time>{{ published }}</time>.</p>
+      <div class="content">
+        {{{ contents }}}
       </div>
-      {{{ contents }}}
-    </div>
+
+      <footer>
+        {{> author }}
+      </footer>
+    </article>
 {{> footer }}
