@@ -1,0 +1,9 @@
+<ul class="nav">
+  {{#each site.social}}
+    <li>
+      <a href="{{ this.link }}" title="{{ this.title }} {{ this.handle }}">
+        <i class="icon {{ this.icon }}"></i>
+      </a>
+    </li>
+  {{/each}}
+</ul>

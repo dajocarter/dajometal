@@ -2,6 +2,27 @@
   "url" : "https://dajometal.surge.sh",
   "author": {
     "name": "David Carter",
-    "firstName": "David"
-  }
+    "firstName": "David",
+    "position": "Director of Technical Services"
+  },
+  "social": [
+    {
+      "link": "//twitter.com/dajocarter",
+      "title": "Twitter",
+      "handle": "@dajocarter",
+      "icon": "icon-twitter"
+    },
+    {
+      "link": "//github.com/dajocarter",
+      "title": "GitHub",
+      "handle": "@dajocarter",
+      "icon": "icon-github"
+    },
+    {
+      "link": "mailto:dajocarter@gmail.com",
+      "title": "Email",
+      "handle": "dajocarter@gmail.com",
+      "icon": "icon-envelope"
+    }
+  ]
 }
