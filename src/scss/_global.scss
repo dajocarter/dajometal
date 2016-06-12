@@ -25,3 +25,99 @@ pre {
 a {
   text-decoration: none;
 }
+
+.social {
+  li {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    text-align: center;
+
+    &.BitBucket {
+      background-color: $twitter;
+    }
+
+    &.Email {
+      background-color: $google;
+    }
+
+    &.GitHub {
+      background-color: $github-alt;
+    }
+
+    &.Instagram {
+      animation: instagram 10s infinite;
+    }
+
+    &.LinkedIn {
+      background-color: $linkedin;
+    }
+
+    &.Reddit {
+      background-color: $reddit;
+    }
+
+    &.Twitter {
+      background-color: $twitter;
+    }
+  }
+
+  .icon {
+    color: white;
+    position: relative;
+    font-size: 1.25rem;
+    top: 10px;
+  }
+}
+
+@keyframes instagram {
+  0% {
+    background-color: $instagram-1;
+  }
+
+  10% {
+    background-color: $instagram-2;
+  }
+
+  20% {
+    background-color: $instagram-3;
+  }
+
+  30% {
+    background-color: $instagram-4;
+  }
+
+  40% {
+    background-color: $instagram-5;
+  }
+
+  50% {
+    background-color: $instagram-6;
+  }
+
+  60% {
+    background-color: $instagram-7;
+  }
+
+  70% {
+    background-color: $instagram-8;
+  }
+
+  80% {
+    background-color: $instagram-9;
+  }
+
+  90% {
+    background-color: $instagram-10;
+  }
+
+  100% {
+    background-color: $instagram-1;
+  }
+}
