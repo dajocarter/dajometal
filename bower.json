@@ -1,0 +1,25 @@
+{
+  "name": "dajometal",
+  "description": "My portfolio built using Metalsmith",
+  "main": "index.js",
+  "authors": [
+    "dajocarter"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "dajocarter",
+    "metalsmith"
+  ],
+  "homepage": "https://github.com/dajocarter/dajometal",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "animate-sass": "^0.6.6"
+  }
+}
