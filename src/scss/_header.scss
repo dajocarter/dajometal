@@ -1,12 +1,21 @@
-#header {
-  height: 18px;
-  padding: 1rem;
+.headroom {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-width: 992px;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 0;
+  z-index: 10;
+  background-color: white;
 
-  .logo {
-    float: left;
   }
 
-  ul.nav {
-    float: right;
+  .logo {
+    flex: 0;
+    padding: 1rem;
   }
 }
