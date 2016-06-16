@@ -39,7 +39,10 @@ gulp.task('img', function() {
 });
 
 gulp.task('js', function() {
-  return gulp.src(['node_modules/waypoints/lib/jquery.waypoints.js', 'src/js/master.js'])
+  return gulp.src([
+      'node_modules/headroom.js/dist/headroom.js',
+      'src/js/master.js'
+    ])
     .pipe($.concat('master.js', {
       newLine: ';'
     }))
