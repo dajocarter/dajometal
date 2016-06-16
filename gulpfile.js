@@ -93,6 +93,7 @@ gulp.task('metalsmith', function() {
       format: 'MMMM Do, YYYY'
     }]
   }))
+  .use(ignore('*.json'))
   .use(markdown)
   .use(excerpts())
   .use(permalinks({
