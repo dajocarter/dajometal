@@ -73,8 +73,16 @@ main {
       background-color: $google;
     }
 
+    &.Facebook {
+      background-color: $facebook;
+    }
+
     &.GitHub {
       background-color: $github-alt;
+    }
+
+    &.GooglePlus {
+      background-color: $google;
     }
 
     &.Instagram {
