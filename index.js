@@ -11,6 +11,7 @@ var Metalsmith = require('./node_modules/metalsmith'),
   layouts = require('./node_modules/metalsmith-layouts'),
   md = require('./node_modules/metalsmith-markdownit'),
   metadata = require('./node_modules/metalsmith-metadata'),
+  pagination = require('./node_modules/metalsmith-pagination'),
   permalinks = require('./node_modules/metalsmith-permalinks');
 
 var markdown = md('default');
@@ -56,6 +57,18 @@ Metalsmith(__dirname)
   }))
   .use(helpers({
     directory: "helpers"
+  }))
+  .use(pagination({
+    'collections.posts': {
+      perPage: 5,
+      layout: 'posts.hbs',
+      first: 'blog/index.html',
+      path: 'blog/:index/index.html',
+      pageMetadata: {
+        title: 'Blog Posts',
+        description: 'Blog posts by dajocarter'
+      }
+    }
   }))
   .use(layouts({
     engine: 'handlebars',
