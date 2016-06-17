@@ -1,0 +1,9 @@
+<ul class="nav social">
+  {{#each site.sharing}}
+    <li>
+      <a target="_blank" class="{{ this.title }}" href="{{ this.link }}{{ ../site.url }}/{{ ../path }}" title="Share this post on {{ this.title }}">
+        <i class="icon {{ this.icon }}"></i>
+      </a>
+    </li>
+  {{/each}}
+</ul>
