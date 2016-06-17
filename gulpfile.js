@@ -8,6 +8,7 @@ var gulp = require('gulp'),
   drafts = require('./node_modules/metalsmith-drafts'),
   emoji = require('./node_modules/markdown-it-emoji'),
   excerpts = require('./node_modules/metalsmith-excerpts'),
+  helpers = require('./node_modules/metalsmith-register-helpers'),
   ignore = require('./node_modules/metalsmith-ignore'),
   inPlace = require('./node_modules/metalsmith-in-place'),
   layouts = require('./node_modules/metalsmith-layouts'),
@@ -68,57 +69,60 @@ gulp.task('sass', function() {
 
 gulp.task('metalsmith', function() {
   Metalsmith(__dirname)
-  .source('src')
-  .destination('build')
-  .clean(false)
-  .use(ignore([
-    'img/**/*',
-    'js/**/*',
-    'scss/**/*'
-  ]))
-  .use(drafts())
-  .use(metadata({
-    site: 'config.json'
-  }))
-  .use(collections({
-    posts: {
-      pattern: 'posts/*.md',
-      sortBy: 'date',
-      reverse: true
-    }
-  }))
-  .use(dateFormatter({
-    dates: [{
-      key: 'published',
-      format: 'MMMM Do, YYYY'
-    }]
-  }))
-  .use(ignore('*.json'))
-  .use(markdown)
-  .use(excerpts())
-  .use(permalinks({
-    relative: false,
-    linksets: [{
-      match: {
-        collection: 'posts'
-      },
-      pattern: 'blog/:title'
-    }]
-  }))
-  .use(layouts({
-    engine: 'handlebars',
-    default: 'default.hbs',
-    directory: 'templates',
-    partials: 'partials',
-    rename: true
-  }))
-  .build(function(err) {
-    if (err) console.log(err);
-  });
+    .source('src')
+    .destination('build')
+    .clean(false)
+    .use(ignore([
+      'img/**/*',
+      'js/**/*',
+      'scss/**/*'
+    ]))
+    .use(drafts())
+    .use(metadata({
+      site: 'config.json'
+    }))
+    .use(collections({
+      posts: {
+        pattern: 'posts/*.md',
+        sortBy: 'date',
+        reverse: true
+      }
+    }))
+    .use(dateFormatter({
+      dates: [{
+        key: 'published',
+        format: 'MMMM Do, YYYY'
+      }]
+    }))
+    .use(ignore('*.json'))
+    .use(markdown)
+    .use(excerpts())
+    .use(permalinks({
+      relative: false,
+      linksets: [{
+        match: {
+          collection: 'posts'
+        },
+        pattern: 'blog/:title'
+      }]
+    }))
+    .use(helpers({
+      directory: "helpers"
+    }))
+    .use(layouts({
+      engine: 'handlebars',
+      default: 'default.hbs',
+      directory: 'templates',
+      partials: 'partials',
+      rename: true
+    }))
+    .build(function(err) {
+      if (err) console.log(err);
+    });
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['src/**/*', 'templates/**/*.hbs', 'partials/**/*.hbs'],['metalsmith']).on('change', browserSync.reload);
+  gulp.watch(['src/**/*', 'templates/**/*.hbs', 'partials/**/*.hbs'], ['metalsmith']).on('change', browserSync.reload);
   gulp.watch(['src/img/*'], ['img']);
   gulp.watch(['src/js/**/*.js'], ['js']);
   gulp.watch(['src/scss/**/*.scss'], ['sass']);
