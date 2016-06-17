@@ -1,9 +1,15 @@
 <ul class="nav social">
   {{#each site.sharing}}
     <li>
-      <a target="_blank" class="{{ this.title }}" href="{{ this.link }}{{ ../site.url }}/{{ ../path }}" title="Share this post on {{ this.title }}">
-        <i class="icon {{ this.icon }}"></i>
+      {{#eq title "Email" }}
+      <a target="_blank" class="{{ title }}" href="{{ link }}" title="Share this post on {{ title }}">
+        <i class="icon {{ icon }}"></i>
       </a>
+      {{else}}
+      <a target="_blank" class="{{ title }}" href="{{ link }}{{ ../site.url }}/{{ ../path }}" title="Share this post on {{ title }}">
+        <i class="icon {{ icon }}"></i>
+      </a>
+      {{/eq}}
     </li>
   {{/each}}
 </ul>
