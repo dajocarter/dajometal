@@ -2,10 +2,19 @@
     <main class="wrap">
       <h1>{{ title }}</h1>
       {{#if collections.posts}}
-        {{#each collections.posts}}
+        {{#each pagination.files}}
           <h2><a href="/{{ this.path }}">{{ this.title }}</a></h2>
           {{{ this.excerpt }}}
         {{/each}}
+
+        <ul>
+          {{#if pagination.previous }}
+            <li><a href="/{{ pagination.previous.path }}"><i class="icon icon-chevron-left"></i></a></li>
+          {{/if}}
+          {{#if pagination.next }}
+            <li><a href="/{{ pagination.next.path }}"><i class="icon icon-chevron-right"></i></a></li>
+          {{/if}}
+        </ul>
       {{/if}}
     </main>
 {{> footer }}
