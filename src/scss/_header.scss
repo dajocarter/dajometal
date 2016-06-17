@@ -1,9 +1,7 @@
+$headerWidth: $pgWidth + 32px;
+
 .headroom {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  max-width: 992px;
-  margin: 0 auto;
+  border-bottom: 2px solid black;
   position: fixed;
   top: 0;
   left: 0;
@@ -20,6 +18,13 @@
 
   &.headroom--pinned {
     transform: translateY(0);
+  }
+
+  .wrap {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    max-width: $headerWidth;
   }
 
   .logo {
