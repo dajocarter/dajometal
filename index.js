@@ -1,17 +1,17 @@
 var Metalsmith = require('./node_modules/metalsmith'),
-  branch = require('./node_modules/metalsmith-branch')
-collections = require('./node_modules/metalsmith-collections'),
-dateFormatter = require('./node_modules/metalsmith-date-formatter'),
-drafts = require('./node_modules/metalsmith-drafts'),
-excerpts = require('./node_modules/metalsmith-excerpts'),
-emoji = require('./node_modules/markdown-it-emoji'),
-helpers = require('./node_modules/metalsmith-register-helpers'),
-ignore = require('./node_modules/metalsmith-ignore'),
-inPlace = require('./node_modules/metalsmith-in-place'),
-layouts = require('./node_modules/metalsmith-layouts'),
-md = require('./node_modules/metalsmith-markdownit'),
-metadata = require('./node_modules/metalsmith-metadata'),
-permalinks = require('./node_modules/metalsmith-permalinks');
+  branch = require('./node_modules/metalsmith-branch'),
+  collections = require('./node_modules/metalsmith-collections'),
+  dateFormatter = require('./node_modules/metalsmith-date-formatter'),
+  drafts = require('./node_modules/metalsmith-drafts'),
+  excerpts = require('./node_modules/metalsmith-excerpts'),
+  emoji = require('./node_modules/markdown-it-emoji'),
+  helpers = require('./node_modules/metalsmith-register-helpers'),
+  ignore = require('./node_modules/metalsmith-ignore'),
+  inPlace = require('./node_modules/metalsmith-in-place'),
+  layouts = require('./node_modules/metalsmith-layouts'),
+  md = require('./node_modules/metalsmith-markdownit'),
+  metadata = require('./node_modules/metalsmith-metadata'),
+  permalinks = require('./node_modules/metalsmith-permalinks');
 
 var markdown = md('default');
 markdown.parser.use(emoji);
