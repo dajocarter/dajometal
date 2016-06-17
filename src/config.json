@@ -1,34 +1,50 @@
 {
-  "url" : "https://dajometal.surge.sh",
+  "url": "https://dajometal.surge.sh",
   "author": {
     "name": "David Carter",
     "firstName": "David",
     "position": "Director of Technical Services"
   },
-  "social": [
-    {
-      "link": "mailto:dajocarter@gmail.com",
-      "title": "Email",
-      "handle": "dajocarter@gmail.com",
-      "icon": "icon-envelope"
-    },
-    {
-      "link": "//github.com/dajocarter",
-      "title": "GitHub",
-      "handle": "@dajocarter",
-      "icon": "icon-github"
-    },
-    {
-      "link": "//twitter.com/dajocarter",
-      "title": "Twitter",
-      "handle": "@dajocarter",
-      "icon": "icon-twitter"
-    },
-    {
-      "link": "//instagram.com/dajocarter",
-      "title": "Instagram",
-      "handle": "@dajocarter",
-      "icon": "icon-instagram"
-    }
-  ]
+  "social": [{
+    "link": "mailto:dajocarter@gmail.com",
+    "title": "Email",
+    "handle": "dajocarter@gmail.com",
+    "icon": "icon-envelope"
+  }, {
+    "link": "//github.com/dajocarter",
+    "title": "GitHub",
+    "handle": "@dajocarter",
+    "icon": "icon-github"
+  }, {
+    "link": "//twitter.com/dajocarter",
+    "title": "Twitter",
+    "handle": "@dajocarter",
+    "icon": "icon-twitter"
+  }, {
+    "link": "//instagram.com/dajocarter",
+    "title": "Instagram",
+    "handle": "@dajocarter",
+    "icon": "icon-instagram"
+  }],
+  "sharing": [{
+    "link": "mailto:dajocarter@gmail.com",
+    "title": "Email",
+    "icon": "icon-envelope"
+  }, {
+    "link": "//www.facebook.com/sharer/sharer.php?u=",
+    "title": "Facebook",
+    "icon": "icon-facebook"
+  }, {
+    "link": "//plus.google.com/share?url=",
+    "title": "GooglePlus",
+    "icon": "icon-google-plus"
+  }, {
+    "link": "//www.reddit.com/r/webdev/submit?url=",
+    "title": "Reddit",
+    "icon": "icon-reddit-alien"
+  }, {
+    "link": "//twitter.com/share?url=",
+    "title": "Twitter",
+    "icon": "icon-twitter"
+  }]
 }
