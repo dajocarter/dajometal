@@ -4,6 +4,10 @@
   flex-wrap: wrap;
   height: 2.5rem;
   padding: 1rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
   .copyright {
     flex: 1;
