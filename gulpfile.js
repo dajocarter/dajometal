@@ -85,8 +85,7 @@ gulp.task('metalsmith', function() {
     .use(collections({
       posts: {
         pattern: 'posts/*.md',
-        sortBy: 'date',
-        reverse: true
+        sortBy: 'date'
       }
     }))
     .use(dateFormatter({
