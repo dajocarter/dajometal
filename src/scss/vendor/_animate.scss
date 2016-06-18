@@ -2,12 +2,13 @@
 // Import everything to generate your animate sass module //
 ////////////////////////////////////////////////////////////
 @import "../../../bower_components/animate-sass/helpers/mixins";
-@import "../../../bower_components/animate-sass/helpers/settings";
+@import "animate-settings";
 @import "../../../bower_components/animate-sass/helpers/base";
 
 // ATTENTION
-/*@import "../../../bower_components/animate-sass/animations/attention-seekers/bounce",
-  "../../../bower_components/animate-sass/animations/attention-seekers/flash",
+@import "../../../bower_components/animate-sass/animations/attention-seekers/bounce";
+
+/*"../../../bower_components/animate-sass/animations/attention-seekers/flash",
   "../../../bower_components/animate-sass/animations/attention-seekers/pulse",
   "../../../bower_components/animate-sass/animations/attention-seekers/shake",
   "../../../bower_components/animate-sass/animations/attention-seekers/swing",
