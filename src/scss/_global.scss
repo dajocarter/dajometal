@@ -54,9 +54,20 @@ main {
 }
 
 .social {
+  &.sharing {
+    li {
+      padding: 0.5rem;
+    }
+
+    a {
+      margin: 0;
+    }
+  }
+
   li {
     flex: 1;
     height: 2.5rem;
+    padding: 0 0.5rem;
   }
 
   a {
@@ -65,6 +76,7 @@ main {
     height: 100%;
     border-radius: 50%;
     text-align: center;
+    margin: 0 auto;
 
     &.BitBucket {
       background-color: $twitter;
