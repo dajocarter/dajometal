@@ -25,6 +25,7 @@ $headerWidth: $pgWidth + 32px;
     justify-content: flex-start;
     flex-wrap: wrap;
     max-width: $headerWidth;
+    margin: 0 auto;
   }
 
   .logo {

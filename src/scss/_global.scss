@@ -39,6 +39,14 @@ main {
   margin: 0 auto;
 }
 
+.wrap {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-width: $pgWidth;
+  margin: 0 auto;
+}
+
 .nav {
   flex: 1;
   display: flex;
