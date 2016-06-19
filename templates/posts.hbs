@@ -1,10 +1,12 @@
 {{> header }}
     <main class="posts">
       <h1>{{ title }}</h1>
-      {{#if collections.posts}}
-        {{#each pagination.files}}
-          <h2><a href="/{{ this.path }}">{{ this.title }}</a></h2>
-          {{{ this.excerpt }}}
+      {{#if collections.posts }}
+        {{#each pagination.files }}
+          <article>
+            <h2><a href="/{{ this.path }}">{{ this.title }}</a></h2>
+            {{{ this.excerpt }}}
+          </article>
         {{/each}}
 
         <ul class="nav pagination">
