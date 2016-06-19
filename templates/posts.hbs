@@ -7,10 +7,21 @@
           {{{ this.excerpt }}}
         {{/each}}
 
-        <ul>
+        <ul class="nav pagination">
           {{#if pagination.previous }}
             <li><a href="/{{ pagination.previous.path }}"><i class="icon icon-chevron-left"></i></a></li>
           {{/if}}
+          {{#each pagination.pages }}
+            <li>
+              {{#if @first }}
+              <a href="/blog/">
+              {{else}}
+              <a href="/blog/{{ pagination.index }}/">
+              {{/if}}
+                {{ pagination.num }}
+              </a>
+            </li>
+          {{/each}}
           {{#if pagination.next }}
             <li><a href="/{{ pagination.next.path }}"><i class="icon icon-chevron-right"></i></a></li>
           {{/if}}
