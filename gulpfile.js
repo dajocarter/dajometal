@@ -114,7 +114,7 @@ gulp.task('metalsmith', function() {
         perPage: 5,
         layout: 'posts.hbs',
         first: 'blog/index.html',
-        path: 'blog/:index/index.html',
+        path: 'blog/:num/index.html',
         pageMetadata: {
           title: 'Blog Posts',
           description: 'Blog posts by dajocarter'
