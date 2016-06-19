@@ -11,7 +11,7 @@
 
         <ul class="nav pagination">
           {{#if pagination.previous }}
-            <li><a href="/{{ pagination.previous.path }}"><i class="icon icon-chevron-left"></i></a></li>
+            <li><a href="/{{removeIndex pagination.previous.path }}"><i class="icon icon-chevron-left"></i></a></li>
           {{/if}}
           {{#each pagination.pages }}
             <li>
@@ -25,7 +25,7 @@
             </li>
           {{/each}}
           {{#if pagination.next }}
-            <li><a href="/{{ pagination.next.path }}"><i class="icon icon-chevron-right"></i></a></li>
+            <li><a href="/{{removeIndex pagination.next.path }}"><i class="icon icon-chevron-right"></i></a></li>
           {{/if}}
         </ul>
       {{/if}}
