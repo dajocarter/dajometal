@@ -15,13 +15,17 @@
           {{/if}}
           {{#each pagination.pages }}
             <li>
+            {{#unlessCurrentPage ../path compare=pagination.num }}
               {{#if @first }}
               <a href="/blog/">
               {{else}}
               <a href="/blog/{{ pagination.num }}/">
               {{/if}}
-                {{ pagination.num }}
+            {{/unlessCurrentPage}}
+              {{ pagination.num }}
+            {{#unlessCurrentPage ../path compare=pagination.num }}
               </a>
+            {{/unlessCurrentPage}}
             </li>
           {{/each}}
           {{#if pagination.next }}
