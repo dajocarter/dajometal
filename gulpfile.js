@@ -4,7 +4,6 @@ var gulp = require('gulp'),
   Metalsmith = require('./node_modules/metalsmith'),
   branch = require('./node_modules/metalsmith-branch'),
   collections = require('./node_modules/metalsmith-collections'),
-  dateFormatter = require('./node_modules/metalsmith-date-formatter'),
   drafts = require('./node_modules/metalsmith-drafts'),
   emoji = require('./node_modules/markdown-it-emoji'),
   excerpts = require('./node_modules/metalsmith-excerpts'),
@@ -87,12 +86,6 @@ gulp.task('metalsmith', function() {
         pattern: 'posts/*.md',
         sortBy: 'date'
       }
-    }))
-    .use(dateFormatter({
-      dates: [{
-        key: 'published',
-        format: 'MMMM Do, YYYY'
-      }]
     }))
     .use(ignore('*.json'))
     .use(markdown)
