@@ -4,8 +4,14 @@
       {{#if collections.posts }}
         {{#each pagination.files }}
           <article>
-            <h2><a href="/{{ this.path }}">{{ this.title }}</a></h2>
-            {{{ this.excerpt }}}
+            <header>
+              <h2><a href="/{{ path }}">{{ title }}</a></h2>
+              <p>
+                <span class="date">{{ moment published format="MMMM Do, YYYY" }}</span>
+                <span class="disqus-comment-count" data-disqus-url="{{ site.url }}/{{ path }}"></span>
+              </p>
+            </header>
+            {{{ excerpt }}}
           </article>
         {{/each}}
 
