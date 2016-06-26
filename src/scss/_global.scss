@@ -53,7 +53,7 @@ main {
   justify-content: flex-end;
 
   li {
-    flex: 0;
+    flex: 0 0 auto;
     padding: 1rem;
   }
 }

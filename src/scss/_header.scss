@@ -29,7 +29,7 @@ $headerWidth: $pgWidth + 32px;
   }
 
   .logo {
-    flex: 0;
+    flex: 0 0 auto;
     padding: 1rem;
   }
 }
