@@ -29,6 +29,14 @@
   }
 }
 
+#about {
+  @media (min-width: 767px) {
+    .nine.col {
+      padding-left: 3rem;
+    }
+  }
+}
+
 #resume {
   h3, h4 {
     border-bottom: 1px solid black;
