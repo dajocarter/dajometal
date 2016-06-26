@@ -55,6 +55,12 @@ a {
   }
 }
 
+img {
+  max-width: 100%;
+
+  &.profile {
+    border-radius: 50%;
+  }
 }
 
 main {
