@@ -203,3 +203,69 @@ main {
     background-color: $instagram-1;
   }
 }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+
+  > .col {
+    flex: 0 0 auto;
+    width: 100%;
+
+    @media (min-width: 767px) {
+      &.one {
+        width: 8.3333333333%;
+      }
+
+      &.two {
+        width: 16.6666666667%;
+      }
+
+      &.three {
+        width: 25%;
+      }
+
+      &.four {
+        width: 33.3333333333%;
+      }
+
+      &.five {
+        width: 41.6666666667%;
+      }
+
+      &.six {
+        width: 50%;
+      }
+
+      &.seven {
+        width: 58.333333333%;
+      }
+
+      &.eight {
+        width: 66.6666666667%;
+      }
+
+      &.nine {
+        width: 75%;
+      }
+
+      &.ten {
+        width: 83.3333333333%;
+      }
+
+      &.eleven {
+        width: 91.6666666667%;
+      }
+
+      &.twelve {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.list {
+  .row:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
