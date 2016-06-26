@@ -5,6 +5,69 @@
     "firstName": "David",
     "position": "Director of Technical Services"
   },
+  "education": [{
+    "uni": "Northern Illinois University",
+    "abbr": "NIU",
+    "location": "DeKalb, IL",
+    "dates": {
+      "from": "01/01/2012",
+      "to": "05/01/2013"
+    },
+    "degree": "Master of Science in Mathematics",
+    "poi": [
+      "Focus in Pure Mathematics"
+    ]
+  }, {
+    "uni": "California State University, Northridge",
+    "abbr": "CSUN",
+    "location": "Northridge, CA",
+    "dates": {
+      "from": "08/01/2009",
+      "to": "05/01/2011"
+    },
+    "degree": "Bachelor of Science in Mathematics",
+    "poi": [
+      "Focus in Pure Mathematics"
+    ]
+  }],
+  "experience": [{
+    "employer": "Tribeswell LLC",
+    "location": "Bloomington, IN",
+    "dates": {
+      "from": "11/15/2014",
+      "to": "Present"
+    },
+    "position": "Director of Technical Services",
+    "poi": [
+      "Managed the hosting and software infastructure for all Tribeswell clients",
+      "Supervised junior developers",
+      "WordPress agency hosting sites on VPS through DigitalOcean"
+    ]
+  },{
+    "employer": "Hanapin Marketing",
+    "location": "Bloomington, IN",
+    "dates": {
+      "from": "05/15/2014",
+      "to": "09/01/2014"
+    },
+    "position": "Front-End Web Development Intern",
+    "poi": [
+      "Did this",
+      "Did that"
+    ]
+  },{
+    "employer": "Campus Tutoring Services",
+    "location": "Bloomington, IN",
+    "dates": {
+      "from": "09/15/2013",
+      "to": "05/01/2015"
+    },
+    "position": "Lead Mathematics Tutor",
+    "poi": [
+      "Tutored hundreds of undergraduate students from Indiana University in mathematics",
+      "Most tutored subjects were Calculus, Linear Algebra, and Probability"
+    ]
+  }],
   "social": [{
     "link": "mailto:dajocarter@gmail.com",
     "title": "Email",
