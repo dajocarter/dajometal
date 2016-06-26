@@ -1,1 +1,17 @@
-<div id="portfolio"></div>
+<div id="portfolio">
+  <h2>Projects</h2>
+
+  <ul class="list">
+  {{#each site.projects }}
+    {{#if @first }}
+    <div class="row">
+    {{/if}}
+      <li class="project three col">
+        {{ name }}: {{ url }}
+      </li>
+    {{#if @last }}
+    </div>
+    {{/if}}
+  {{/each}}
+  </ul>
+</div>

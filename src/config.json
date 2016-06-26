@@ -68,6 +68,31 @@
       "Most tutored subjects were Calculus, Linear Algebra, and Probability"
     ]
   }],
+  "projects": [{
+    "name": "Example",
+    "url": "example.com"
+  }, {
+    "name": "Example",
+    "url": "example.com"
+  }, {
+    "name": "Example",
+    "url": "example.com"
+  }, {
+    "name": "Example",
+    "url": "example.com"
+  }, {
+    "name": "Example",
+    "url": "example.com"
+  }, {
+    "name": "Example",
+    "url": "example.com"
+  }, {
+    "name": "Example",
+    "url": "example.com"
+  }, {
+    "name": "Example",
+    "url": "example.com"
+  }],
   "social": [{
     "link": "mailto:dajocarter@gmail.com",
     "title": "Email",
