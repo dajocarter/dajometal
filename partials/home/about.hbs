@@ -1,5 +1,28 @@
 <div id="about">
-  <h2>Web is Life</h2>
+  <div class="row">
+    <div class="three col">
+      <img class="profile" src="/img/profile.jpeg" alt="@dajocarter">
+    </div>
+    <div class="nine col">
+      <h2>Web is Life</h2>
+      <p>I'm a front-end web developer currently working at Tribeswell in Bloomington, Indiana. I'm also the sole developer for a mobile app that you can find in both the <a href="//appstore.com/necterconnectwithgroupsinyourarea">App Store</a> and the <a href="//play.google.com/store/apps/details?id=com.necterinc.gonecter">Play Store</a>! I love making web applications since it entails a much bigger challenge than your typical brochure-like website. Right now I'm learning Node.js and playing around with Meteor. If I'm not doing or learning web development, you can find me taking long walks and hikes with my dog <a href="//instagram.com/piglet_petit">Kaya</a> or taking mini-vacations to explore the states with my other half. Otherwise, I'm playing video games, watching Netflix, or lurking on Reddit.</p>
+      <div class="row">
+        <div class="six col">
+          <h2>Contact Details</h2>
+          <ul>
+            {{#each site.social }}
+            <li><a href="{{ link }}" title="{{ title }} {{ handle }}"><i class="icon {{ icon }}"></i> {{ title }}</a></li>
+            {{/each}}
+          </ul>
+        </div>
 
-  <p>Something about me. Something about why I love developing for the web. Something about what I like to do in my free-time.</p>
+        <div class="six col">
+          <a href="/assets/David_Carter-resume.pdf" title="Download Résumé" class="button"><i class="icon icon-cloud-download"></i> Download Résumé</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 </div>
