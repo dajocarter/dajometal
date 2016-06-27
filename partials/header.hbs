@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
-    <title>{{ title }}</title>
+    <title>{{#if title }}{{ title }}{{ else }} {{ site.author.name }} {{/if}}</title>
     <meta name="description" content="{{ description }}">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="https://use.fonticons.com/621f5d80.js"></script>
