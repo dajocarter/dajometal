@@ -5,17 +5,12 @@
     <ul class="list">
       {{#each site.education }}
       <li class="row">
-        <div class="three col">
-          <h3>{{ degree }}</h3>
-          <p><span class="month">{{ moment dates.from format="MMM" }}</span><span class="year">{{ moment dates.from format="YYYY" }}</span> - <span class="month">{{ moment dates.to format="MMM" }}</span><span class="year">{{ moment dates.to format="YYYY" }}</span></p>
+        <h3>{{ degree }}</h3>
+        <div class="five col">
+          <p class="clearfix"><span class="from month">{{ moment dates.from format="MMM" }}</span><span class="from year">{{ moment dates.from format="YYYY" }} - </span><span class="to month">{{ moment dates.to format="MMM" }}</span><span class="to year">{{ moment dates.to format="YYYY" }}</span></p>
         </div>
-        <div class="nine col">
-          <h4>{{ uni }} - {{ location }}</h4>
-          <ul>
-            {{#each poi }}
-            <li>{{ this }}</li>
-            {{/each}}
-          </ul>
+        <div class="seven col">
+          <h4>{{ uni }}</h4>
         </div>
       </li>
       {{/each}}
@@ -27,12 +22,12 @@
     <ul class="list">
       {{#each site.experience }}
       <li class="row">
-        <div class="three col">
-          <h3>{{ employer }}</h3>
-          <p><span class="month">{{ moment dates.from format="MMM" }}</span><span class="year">{{ moment dates.from format="YYYY" }}</span> - {{#eq dates.to "Present"}} {{ dates.to }} {{ else }} <span class="month">{{ moment dates.to format="MMM" }}</span><span class="year">{{ moment dates.to format="YYYY" }}</span>{{/eq}}</p>
+          <h3>{{ position }}</h3>
+        <div class="five col">
+          <p class="clearfix"><span class="from month">{{ moment dates.from format="MMM" }}</span><span class="from year">{{ moment dates.from format="YYYY" }} - </span>{{#eq dates.to "Present"}} <span>{{ dates.to }}</span> {{ else }} <span class="to month">{{ moment dates.to format="MMM" }}</span><span class="to year">{{ moment dates.to format="YYYY" }}</span>{{/eq}}</p>
         </div>
-        <div class="nine col">
-          <h4>{{ position }} - {{ location }}</h4>
+        <div class="seven col">
+          <h4>{{ employer }}</h4>
           <ul>
             {{#each poi }}
             <li>{{ this }}</li>

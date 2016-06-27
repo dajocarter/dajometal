@@ -25,6 +25,10 @@
 }
 
 #about {
+  .col {
+    width: 100%;
+  }
+
   @media (min-width: 767px) {
     .nine.col {
       padding-left: 3rem;
@@ -33,13 +37,53 @@
 }
 
 #resume {
-  h3, h4 {
-    border-bottom: 1px solid black;
+  .row {
+    padding: 0 1rem;
   }
 
-  @media (min-width: 767px) {
-    .three.col {
-      border-right: 1px solid black;
+  h2 {
+    margin: 2rem 0;
+    padding: 1rem 0 0.5rem;
+    border-bottom: 2px solid $teal;
+  }
+
+  h3, h4 {
+    text-align: center;
+  }
+
+  h3 {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $orange;
+    width: 100%;
+  }
+
+  .five.col {
+    padding: 0.5rem 0.5rem 0 0;
+  }
+
+  .seven.col {
+    border-left: 1px solid $orange;
+    padding: 0.5rem 0 0 0.5rem;
+  }
+
+  span {
+    color: $white;
+  }
+
+  p {
+    position: relative;
+  }
+
+  .month {
+    position: absolute;
+    top: -1rem;
+
+    &.from {
+      left: 0;
     }
+  }
+
+  .year {
+    float: left;
   }
 }
