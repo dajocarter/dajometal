@@ -80,11 +80,11 @@
 
   .first.col {
     padding: 0.5rem 0.5rem 0 0;
-    width: 125px;
+    width: 135px;
   }
 
   .second.col {
-    width: calc(100% - 125px);
+    width: calc(100% - 135px);
     border-left: 1px solid $orange;
     padding: 0.5rem 0 0 0.5rem;
   }
@@ -100,6 +100,7 @@
   .month {
     position: absolute;
     top: -1rem;
+    color: $lightgray;
 
     &.from {
       left: 0;
@@ -108,5 +109,6 @@
 
   .year {
     float: left;
+    font-size: 1.25rem;
   }
 }
