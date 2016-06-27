@@ -140,7 +140,7 @@ main {
     }
 
     &.GitHub {
-      background-color: $github-alt;
+      background-color: $github;
     }
 
     &.GooglePlus {
@@ -148,11 +148,7 @@ main {
     }
 
     &.Instagram {
-      animation: instagram 10s infinite;
-    }
-
-    &.LinkedIn {
-      background-color: $linkedin;
+      background-color: $instagram;
     }
 
     &.Reddit {
@@ -169,52 +165,6 @@ main {
     position: relative;
     font-size: 1.25rem;
     top: 10px;
-  }
-}
-
-@keyframes instagram {
-  0% {
-    background-color: $instagram-1;
-  }
-
-  10% {
-    background-color: $instagram-2;
-  }
-
-  20% {
-    background-color: $instagram-3;
-  }
-
-  30% {
-    background-color: $instagram-4;
-  }
-
-  40% {
-    background-color: $instagram-5;
-  }
-
-  50% {
-    background-color: $instagram-6;
-  }
-
-  60% {
-    background-color: $instagram-7;
-  }
-
-  70% {
-    background-color: $instagram-8;
-  }
-
-  80% {
-    background-color: $instagram-9;
-  }
-
-  90% {
-    background-color: $instagram-10;
-  }
-
-  100% {
-    background-color: $instagram-1;
   }
 }
 
