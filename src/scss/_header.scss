@@ -1,15 +1,14 @@
 $headerWidth: $pgWidth + 32px;
 
 .headroom {
-  border-bottom: 2px solid black;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   padding: 1rem 0;
   z-index: 10;
-  background-color: white;
-  will-change: transform;
+  background-color: $darkgray;
+  color: white;
   transition: transform 200ms linear;
 
   &.headroom--unpinned {
