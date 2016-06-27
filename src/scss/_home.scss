@@ -62,10 +62,6 @@
 }
 
 #resume {
-  .row {
-    padding: 0 1rem;
-  }
-
   h2 {
     margin: 2rem 0;
     padding: 1rem 0 0.5rem;
@@ -76,15 +72,21 @@
     padding-bottom: 0.5rem;
     border-bottom: 1px solid $orange;
     width: 100%;
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    margin: 0.9rem 0 0.9rem;
+    font-size: 1.25rem;
   }
 
   .first.col {
     padding: 0.5rem 0.5rem 0 0;
-    width: 135px;
+    width: 110px;
   }
 
   .second.col {
-    width: calc(100% - 135px);
+    width: calc(100% - 110px);
     border-left: 1px solid $orange;
     padding: 0.5rem 0 0 0.5rem;
   }
@@ -109,6 +111,5 @@
 
   .year {
     float: left;
-    font-size: 1.25rem;
   }
 }
