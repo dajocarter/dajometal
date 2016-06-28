@@ -69,6 +69,24 @@
     ]
   }],
   "projects": [{
+    "title": "Necter",
+    "url": "appstore.com/necterconnectwithgroupsinyourarea",
+    "screenshot": "necter.jpg",
+    "year": "2015",
+    "tags": [
+      "Ionic, Angular 1, Firebase, Pushwoosh"
+    ],
+    "description": "This is an example description."
+  }, {
+    "title": "New Moon Cottage",
+    "url": "newmooncottage.com",
+    "screenshot": "newmoon.png",
+    "year": "2016",
+    "tags": [
+      "WordPress, WooCommerce"
+    ],
+    "description": "This is an example description."
+  }, {
     "title": "Old 55 Distillery",
     "url": "old55distillery.com",
     "screenshot": "old55.png",
