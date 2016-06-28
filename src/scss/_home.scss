@@ -82,11 +82,11 @@
 
   .first.col {
     padding: 0.5rem 0.5rem 0 0;
-    width: 110px;
+    width: 115px;
   }
 
   .second.col {
-    width: calc(100% - 110px);
+    width: calc(100% - 115px);
     border-left: 1px solid $orange;
     padding: 0.5rem 0 0 0.5rem;
   }
@@ -107,10 +107,18 @@
     &.from {
       left: 0;
     }
+
+    &.to {
+      margin-left: 3px;
+    }
   }
 
   .year {
     float: left;
+
+    &.to {
+      margin-left: 3px;
+    }
   }
 }
 
