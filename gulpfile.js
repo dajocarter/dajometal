@@ -43,7 +43,7 @@ gulp.task('js', function() {
   return gulp.src([
       'node_modules/jquery/dist/jquery.js',
       'node_modules/headroom.js/dist/headroom.js',
-      'node_modules/magnific-popup/dist/jquery.magnific-popup.js'
+      'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
       'src/js/master.js'
     ])
     .pipe($.concat('master.js', {
