@@ -12,4 +12,12 @@
     </li>
   {{/each}}
   </ul>
+
+  <div class="popup-gallery">
+    {{#each site.projects }}
+    {{#each gallery }}
+    <a href="/img/{{ image }}" title="{{ title }}"><img src="/img/{{ image }}"></a>
+    {{/each}}
+    {{/each}}
+  </div>
 </div>

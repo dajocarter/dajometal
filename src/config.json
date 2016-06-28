@@ -76,9 +76,16 @@
     "tags": [
       "Ionic", "Angular 1", "Firebase", "Pushwoosh"
     ],
-    "gallery": [
-      "necter1.jpg", "necter2.jpg", "necter3.jpg"
-    ],
+    "gallery": [{
+      "title": "Easy To Create Groups",
+      "image": "necter1.jpg"
+    }, {
+      "title": "Connect With Others",
+      "image": "necter2.jpg"
+    }, {
+      "title": "Chat Amongst Yourselves",
+      "image": "necter3.jpg"
+    }],
     "description": "This is an example description."
   }, {
     "title": "New Moon Cottage",
