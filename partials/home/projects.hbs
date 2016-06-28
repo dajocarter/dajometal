@@ -6,8 +6,12 @@
     {{#if @first }}
     <div class="row">
     {{/if}}
-      <li class="project three col">
-        {{ name }}: {{ url }}
+      <li class="project">
+        <div class="screenshot" style="background-image: url('/img/{{ screenshot }}');"></div>
+        <p><span>{{ title }}</span><span>{{ year }}</span></p>
+        <p>{{ url }}</p>
+        <p><i class="icon icon-tag"></i> {{#each tags}}{{ this }}{{#unless @last }}, {{/unless}}{{/each}}</p>
+        <p>{{ description }}</p>
       </li>
     {{#if @last }}
     </div>

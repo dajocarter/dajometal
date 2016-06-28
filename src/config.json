@@ -69,29 +69,41 @@
     ]
   }],
   "projects": [{
-    "name": "Example",
-    "url": "example.com"
+    "title": "Old 55 Distillery",
+    "url": "old55distillery.com",
+    "screenshot": "old55.png",
+    "year": "2015",
+    "tags": [
+      "WordPress, Parallax"
+    ],
+    "description": "This is an example description."
   }, {
-    "name": "Example",
-    "url": "example.com"
+    "title": "The Fresh Fork",
+    "url": "thefreshforkonline.com",
+    "screenshot": "freshfork.png",
+    "year": "2015",
+    "tags": [
+      "WordPress, WooCommerce"
+    ],
+    "description": "This is an example description."
   }, {
-    "name": "Example",
-    "url": "example.com"
+    "title": "My Brain On Anatomy",
+    "url": "mybrainonanatomy.com",
+    "screenshot": "mboa.png",
+    "year": "2015",
+    "tags": [
+      "WordPress", "Angular 1"
+    ],
+    "description": "This is an example description."
   }, {
-    "name": "Example",
-    "url": "example.com"
-  }, {
-    "name": "Example",
-    "url": "example.com"
-  }, {
-    "name": "Example",
-    "url": "example.com"
-  }, {
-    "name": "Example",
-    "url": "example.com"
-  }, {
-    "name": "Example",
-    "url": "example.com"
+    "title": "Lesson Zest",
+    "url": "lessonzest.com",
+    "screenshot": "lessonzest.png",
+    "year": "2015",
+    "tags": [
+      "WordPress"
+    ],
+    "description": "This is an example description."
   }],
   "social": [{
     "link": "mailto:dajocarter@gmail.com",

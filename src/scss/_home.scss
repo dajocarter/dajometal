@@ -111,3 +111,31 @@
     float: left;
   }
 }
+
+.project {
+  flex: 0 0 auto;
+  width: 50%;
+
+  &:nth-child(odd) {
+    padding-right: 1rem;
+  }
+
+  &:nth-child(even) {
+    padding-left: 1rem;
+  }
+
+  &:nth-child(2n+3) {
+    padding-top: 1rem;
+  }
+
+  &:nth-child(2n+4) {
+    padding-top: 1rem;
+  }
+}
+
+.screenshot {
+  height: 125px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
