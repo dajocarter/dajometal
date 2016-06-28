@@ -114,22 +114,27 @@
 
 .project {
   flex: 0 0 auto;
-  width: 50%;
+  width: 100%;
+  padding: 0;
 
-  &:nth-child(odd) {
-    padding-right: 1rem;
-  }
+  @media (min-width: 767px) {
+    width: 50%;
 
-  &:nth-child(even) {
-    padding-left: 1rem;
-  }
+    &:nth-child(odd) {
+      padding-right: 1rem;
+    }
 
-  &:nth-child(2n+3) {
-    padding-top: 1rem;
-  }
+    &:nth-child(even) {
+      padding-left: 1rem;
+    }
 
-  &:nth-child(2n+4) {
-    padding-top: 1rem;
+    &:nth-child(2n+3) {
+      padding-top: 1rem;
+    }
+
+    &:nth-child(2n+4) {
+      padding-top: 1rem;
+    }
   }
 }
 
