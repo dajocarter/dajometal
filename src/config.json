@@ -74,7 +74,10 @@
     "screenshot": "necter.jpg",
     "year": "2015",
     "tags": [
-      "Ionic, Angular 1, Firebase, Pushwoosh"
+      "Ionic", "Angular 1", "Firebase", "Pushwoosh"
+    ],
+    "gallery": [
+      "necter1.jpg", "necter2.jpg", "necter3.jpg"
     ],
     "description": "This is an example description."
   }, {
