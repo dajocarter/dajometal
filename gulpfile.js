@@ -41,7 +41,9 @@ gulp.task('img', function() {
 
 gulp.task('js', function() {
   return gulp.src([
+      'node_modules/jquery/dist/jquery.js',
       'node_modules/headroom.js/dist/headroom.js',
+      'node_modules/magnific-popup/dist/jquery.magnific-popup.js'
       'src/js/master.js'
     ])
     .pipe($.concat('master.js', {
@@ -54,7 +56,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('sass', function() {
-  return gulp.src('src/scss/master.scss')
+  return gulp.src(['node_modules/magnific-popup/dist/magnific-popup.css', 'src/scss/master.scss'])
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       outputStyle: 'expanded'

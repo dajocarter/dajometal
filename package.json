@@ -22,6 +22,8 @@
     "handlebars": "^4.0.5",
     "headroom.js": "^0.9.3",
     "helper-moment": "^0.1.0",
+    "jquery": "^3.0.0",
+    "magnific-popup": "^1.1.0",
     "markdown-it-emoji": "^1.2.0",
     "metalsmith": "^2.1.0",
     "metalsmith-branch": "0.0.4",
