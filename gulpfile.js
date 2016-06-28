@@ -64,6 +64,7 @@ gulp.task('sass', function() {
     .pipe($.autoprefixer({
       browsers: AUTOPREFIXER_BROWSERS
     }))
+    .pipe($.concat('master.css'))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('build/css'))
     .pipe(browserSync.stream());
