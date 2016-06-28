@@ -7,7 +7,12 @@
       <li class="row">
         <h3>{{ degree }}</h3>
         <div class="first col">
-          <p class="clearfix"><span class="from month">{{ moment dates.from format="MMM" }}</span><span class="from year">{{ moment dates.from format="YYYY" }} - </span><span class="to month">{{ moment dates.to format="MMM" }}</span><span class="to year">{{ moment dates.to format="YYYY" }}</span></p>
+          <p class="clearfix">
+            <span class="from month">{{ moment dates.from format="MMM" }}</span>
+            <span class="from year">{{ moment dates.from format="YYYY" }} - </span>
+            <span class="to month">{{ moment dates.to format="MMM" }}</span>
+            <span class="to year">{{ moment dates.to format="YYYY" }}</span>
+          </p>
         </div>
         <div class="second col">
           <h4>{{ uni }}</h4>
@@ -24,7 +29,16 @@
       <li class="row">
           <h3>{{ position }}</h3>
         <div class="first col">
-          <p class="clearfix"><span class="from month">{{ moment dates.from format="MMM" }}</span><span class="from year">{{ moment dates.from format="YYYY" }} - </span>{{#eq dates.to "Present"}} <span class="to year">{{ dates.to }}</span> {{ else }} <span class="to month">{{ moment dates.to format="MMM" }}</span><span class="to year">{{ moment dates.to format="YYYY" }}</span>{{/eq}}</p>
+          <p class="clearfix">
+            <span class="from month">{{ moment dates.from format="MMM" }}</span>
+            <span class="from year">{{ moment dates.from format="YYYY" }} - </span>
+            {{#eq dates.to "Present"}}
+            <span class="to year">{{ dates.to }}</span>
+            {{ else }}
+            <span class="to month">{{ moment dates.to format="MMM" }}</span>
+            {{/eq}}
+            <span class="to year">{{ moment dates.to format="YYYY" }}</span>
+          </p>
         </div>
         <div class="second col">
           <h4>{{ employer }}</h4>
