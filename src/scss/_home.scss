@@ -114,6 +114,13 @@
   }
 }
 
+#portfolio {
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 .project {
   flex: 0 0 auto;
   width: 100%;
@@ -141,8 +148,36 @@
 }
 
 .screenshot {
-  height: 125px;
+  height: 200px;
   background-size: cover;
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
+  margin-bottom: 1rem;
+
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.info {
+  display: flex;
+
+  span {
+    flex: 1;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+}
+
+.tags {
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+.descrip {
+  color: $white;
 }
