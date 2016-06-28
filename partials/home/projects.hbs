@@ -3,19 +3,13 @@
 
   <ul class="list">
   {{#each site.projects }}
-    {{#if @first }}
-    <div class="row">
-    {{/if}}
-      <li class="project">
-        <div class="screenshot" style="background-image: url('/img/{{ screenshot }}');"></div>
-        <p><span>{{ title }}</span><span>{{ year }}</span></p>
-        <p>{{ url }}</p>
-        <p><i class="icon icon-tag"></i> {{#each tags}}{{ this }}{{#unless @last }}, {{/unless}}{{/each}}</p>
-        <p>{{ description }}</p>
-      </li>
-    {{#if @last }}
-    </div>
-    {{/if}}
+    <li class="project">
+      <div class="screenshot" style="background-image: url('/img/{{ screenshot }}');"><a target="_blank" href="//{{ url }}"></a></div>
+      <h4 class="info"><span>{{ title }}</span><span>{{ year }}</span></h4>
+      <p class="url"><a target="_blank" href="//{{ url }}">{{ url }}</a></p>
+      <p class="tags"><i class="icon icon-tag"></i> {{#each tags}}{{ this }}{{#unless @last }}, {{/unless}}{{/each}}</p>
+      <p class="descrip">{{ description }}</p>
+    </li>
   {{/each}}
   </ul>
 </div>
