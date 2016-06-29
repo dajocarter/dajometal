@@ -1,23 +1,60 @@
 #footer {
-  height: 4.5rem;
   padding: 1rem;
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: black;
+  justify-content: center;
 
-  .wrap {
-    flex-wrap: wrap-reverse;
-  }
+  .scroll {
+    position: absolute;
+    left: 50%;
+    top: -30px;
+    transform: translateX(-50%);
+    background-color: $lightgray;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    font-size: 1.25rem;
+    text-align: center;
+    color: white;
 
-  .copyright {
-    flex: 1;
-    margin: 0;
-    line-height: 2.5rem;
-    min-width: 130px;
-
-    @media (max-width: 400px) {
-      text-align: center;
+    &:hover, &:focus {
+      background-color: $teal;
     }
   }
+
+  .icon {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .social {
+    flex: 0 0 auto;
+    width: 100%;
+    justify-content: center;
+    margin: 2rem 0 1rem;
+
+    li {
+      flex: 0;
+    }
+
+    a {
+      background-color: inherit;
+    }
+
+    .icon {
+      color: $lightgray;
+    }
+  }
+}
+
+.copyright {
+  flex: 0 0 auto;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  color: $darkgray;
 }
