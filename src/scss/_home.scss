@@ -135,6 +135,8 @@
   flex: 0 0 auto;
   width: 100%;
   padding: 0;
+  margin-bottom: 2rem;
+  overflow-x: hidden;
 
   @media (min-width: 767px) {
     width: 50%;
