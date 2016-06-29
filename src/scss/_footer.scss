@@ -4,6 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  max-width: 100%;
   background-color: black;
   justify-content: center;
 
@@ -23,12 +24,12 @@
     &:hover, &:focus {
       background-color: $teal;
     }
-  }
 
-  .icon {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    .icon {
+      position: relative;
+      top: 45%;
+      transform: translateY(-45%);
+    }
   }
 
   .social {
@@ -38,7 +39,7 @@
     margin: 2rem 0 1rem;
 
     li {
-      flex: 0;
+      flex: 0 0 auto;
     }
 
     a {
