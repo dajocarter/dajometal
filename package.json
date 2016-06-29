@@ -23,6 +23,7 @@
     "headroom.js": "^0.9.3",
     "helper-moment": "^0.1.0",
     "jquery": "^3.0.0",
+    "jquery.scrollto": "^2.1.2",
     "magnific-popup": "^1.1.0",
     "markdown-it-emoji": "^1.2.0",
     "metalsmith": "^2.1.0",

@@ -44,6 +44,7 @@ gulp.task('js', function() {
       'node_modules/jquery/dist/jquery.js',
       'node_modules/headroom.js/dist/headroom.js',
       'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+      'node_modules/jquery.scrollto/jquery.scrollTo.js',
       'src/js/master.js'
     ])
     .pipe($.concat('master.js', {

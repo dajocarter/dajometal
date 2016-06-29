@@ -20,6 +20,14 @@ document.addEventListener('DOMContentLoaded', function(event) {
 });
 
 $(document).ready(function() {
+  $('a[href^="#"]').click(function(e) {
+    e.preventDefault();
+    $(window).stop(true).scrollTo(this.hash, {
+      duration:1000, 
+      interrupt:true
+    });
+  });
+
   $('.popup-gallery').magnificPopup({
     delegate: 'a',
     type: 'image',
