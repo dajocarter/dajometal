@@ -5,7 +5,7 @@
   {{#each site.projects }}
     <li class="project">
       <div class="screenshot" style="background-image: url('/img/{{ screenshot }}');"><a href="#{{hyphenate title }}"></a></div>
-      <h4 class="info"><span>{{ title }}</span><span>{{ year }}</span></h4>
+      <h4 class="info"><span>{{titleize title }}</span><span>{{ year }}</span></h4>
       <p class="url"><a target="_blank" href="//{{ url }}">{{ url }}</a></p>
       <p class="tags"><i class="icon icon-tag"></i> {{#each tags}}{{ this }}{{#unless @last }}, {{/unless}}{{/each}}</p>
       <p class="descrip">{{ description }}</p>
