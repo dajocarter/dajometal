@@ -69,7 +69,7 @@
     ]
   }],
   "projects": [{
-    "title": "Necter",
+    "title": "necter",
     "url": "appstore.com/necterconnectwithgroupsinyourarea",
     "screenshot": "necter.jpg",
     "year": "2015",
@@ -88,49 +88,99 @@
     }],
     "description": "This is an example description."
   }, {
-    "title": "New Moon Cottage",
+    "title": "new moon cottage",
     "url": "newmooncottage.com",
     "screenshot": "newmoon.png",
     "year": "2016",
     "tags": [
       "WordPress, WooCommerce"
     ],
+    "gallery": [{
+      "title": "Shop Page",
+      "image": "newmoon1.jpg"
+    }, {
+      "title": "Product Page",
+      "image": "newmoon2.jpg"
+    }, {
+      "title": "Mobile-Friendly Responsive Slider",
+      "image": "newmoon3.jpg"
+    }],
     "description": "This is an example description."
   }, {
-    "title": "Old 55 Distillery",
+    "title": "old 55 distillery",
     "url": "old55distillery.com",
     "screenshot": "old55.png",
     "year": "2015",
     "tags": [
       "WordPress, Parallax"
     ],
+    "gallery": [{
+      "title": "Age Restriction",
+      "image": "old1.jpg"
+    }, {
+      "title": "Parallax Bottles",
+      "image": "old2.jpg"
+    }, {
+      "title": "Slider",
+      "image": "old3.jpg"
+    }],
     "description": "This is an example description."
   }, {
-    "title": "The Fresh Fork",
+    "title": "the fresh fork",
     "url": "thefreshforkonline.com",
     "screenshot": "freshfork.png",
     "year": "2016",
     "tags": [
       "WordPress, WooCommerce"
     ],
+    "gallery": [{
+      "title": "CTA and Testimonials",
+      "image": "freshfork1.jpg"
+    }, {
+      "title": "Rotating Menu",
+      "image": "freshfork2.jpg"
+    }, {
+      "title": "Calendar Ordering",
+      "image": "freshfork3.jpg"
+    }, {
+      "title": "Shop Page",
+      "image": "freshfork4.jpg"
+    }],
     "description": "This is an example description."
   }, {
-    "title": "My Brain On Anatomy",
+    "title": "my brain on anatomy",
     "url": "mybrainonanatomy.com",
     "screenshot": "mboa.png",
     "year": "2015",
     "tags": [
       "WordPress", "Angular 1"
     ],
+    "gallery": [{
+      "title": "Firebase-Powered Quiz",
+      "image": "mboa1.jpg"
+    }, {
+      "title": "Immediate Feedback",
+      "image": "mboa2.jpg"
+    }],
     "description": "This is an example description."
   }, {
-    "title": "Lesson Zest",
+    "title": "lesson zest",
     "url": "lessonzest.com",
     "screenshot": "lessonzest.png",
     "year": "2016",
     "tags": [
       "WordPress"
     ],
+    "gallery": [{
+      "title": "Lesson Modules",
+      "image": "lessonzest1.jpg"
+    }, {
+      "title": "Lessons",
+      "image": "lessonzest2.jpg"
+    }, {
+      "title": "Lesson",
+      "image": "lessonzest3.jpg"
+    }],
     "description": "This is an example description."
   }],
   "social": [{
