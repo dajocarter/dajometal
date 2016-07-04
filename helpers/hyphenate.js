@@ -10,7 +10,7 @@
  * @api public
  */
 
-module.exports = function(str) {
+module.exports.hyphenate = function(str) {
   if (str && typeof str === 'string') {
     return str.split(' ').join('-');
   }

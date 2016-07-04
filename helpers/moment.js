@@ -1,5 +1,5 @@
 var helperMoment = require('helper-moment');
 
-module.exports = function(str, pattern) {
+module.exports.moment = function(str, pattern) {
   return helperMoment(str, pattern);
 }

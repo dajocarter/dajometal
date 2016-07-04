@@ -12,7 +12,7 @@
  * @block
  * @api public
  */
-module.exports = function(a, b, options) {
+module.exports.eq = function(a, b, options) {
   if (arguments.length === 2) {
     options = b;
     b = options.hash.compare;
