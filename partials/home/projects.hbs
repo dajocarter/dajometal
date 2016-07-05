@@ -16,7 +16,11 @@
   {{#each site.projects }}
   <div id="{{hyphenate title }}" class="project-gallery mfp-hide">
     {{#each gallery }}
-    <a href="/img/{{ image }}" title="{{ title }}"><img src="/img/{{ image }}"></a>
+    <div class="slide">
+      <img src="/img/{{ image }}" />
+      <h3>{{ title }}</h3>
+      <p>{{ description }}</p>
+    </div>
     {{/each}}
   </div>
   {{/each}}
