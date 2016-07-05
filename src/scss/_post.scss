@@ -36,9 +36,11 @@ article {
   h1 {
     text-align: center;
     font-size: 3rem;
+    margin: 3rem auto;
 
     @media (min-width: 767px) {
       font-size: 5rem;
+      margin: 5rem auto;
     }
   }
 
