@@ -78,13 +78,16 @@
     ],
     "gallery": [{
       "title": "Easy To Create Groups",
-      "image": "necter1.jpg"
+      "image": "necter1.jpg",
+      "description": "This is an example description."
     }, {
       "title": "Connect With Others",
-      "image": "necter2.jpg"
+      "image": "necter2.jpg",
+      "description": "This is an example description."
     }, {
       "title": "Chat Amongst Yourselves",
-      "image": "necter3.jpg"
+      "image": "necter3.jpg",
+      "description": "This is an example description."
     }],
     "description": "This is an example description."
   }, {
@@ -97,13 +100,16 @@
     ],
     "gallery": [{
       "title": "Shop Page",
-      "image": "newmoon1.jpg"
+      "image": "newmoon1.jpg",
+      "description": "This is an example description."
     }, {
       "title": "Product Page",
-      "image": "newmoon2.jpg"
+      "image": "newmoon2.jpg",
+      "description": "This is an example description."
     }, {
       "title": "Mobile-Friendly Responsive Slider",
-      "image": "newmoon3.jpg"
+      "image": "newmoon3.jpg",
+      "description": "This is an example description."
     }],
     "description": "This is an example description."
   }, {
@@ -116,13 +122,16 @@
     ],
     "gallery": [{
       "title": "Age Restriction",
-      "image": "old1.jpg"
+      "image": "old1.jpg",
+      "description": "This is an example description."
     }, {
       "title": "Parallax Bottles",
-      "image": "old2.jpg"
+      "image": "old2.jpg",
+      "description": "This is an example description."
     }, {
       "title": "Slider",
-      "image": "old3.jpg"
+      "image": "old3.jpg",
+      "description": "This is an example description."
     }],
     "description": "This is an example description."
   }, {
@@ -135,16 +144,20 @@
     ],
     "gallery": [{
       "title": "CTA and Testimonials",
-      "image": "freshfork1.jpg"
+      "image": "freshfork1.jpg",
+      "description": "This is an example description."
     }, {
       "title": "Rotating Menu",
-      "image": "freshfork2.jpg"
+      "image": "freshfork2.jpg",
+      "description": "This is an example description."
     }, {
       "title": "Calendar Ordering",
-      "image": "freshfork3.jpg"
+      "image": "freshfork3.jpg",
+      "description": "This is an example description."
     }, {
       "title": "Shop Page",
-      "image": "freshfork4.jpg"
+      "image": "freshfork4.jpg",
+      "description": "This is an example description."
     }],
     "description": "This is an example description."
   }, {
@@ -157,10 +170,12 @@
     ],
     "gallery": [{
       "title": "Firebase-Powered Quiz",
-      "image": "mboa1.jpg"
+      "image": "mboa1.jpg",
+      "description": "This is an example description."
     }, {
       "title": "Immediate Feedback",
-      "image": "mboa2.jpg"
+      "image": "mboa2.jpg",
+      "description": "This is an example description."
     }],
     "description": "This is an example description."
   }, {
@@ -173,13 +188,16 @@
     ],
     "gallery": [{
       "title": "Lesson Modules",
-      "image": "lessonzest1.jpg"
+      "image": "lessonzest1.jpg",
+      "description": "This is an example description."
     }, {
       "title": "Lessons",
-      "image": "lessonzest2.jpg"
+      "image": "lessonzest2.jpg",
+      "description": "This is an example description."
     }, {
       "title": "Lesson",
-      "image": "lessonzest3.jpg"
+      "image": "lessonzest3.jpg",
+      "description": "This is an example description."
     }],
     "description": "This is an example description."
   }],
