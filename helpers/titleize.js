@@ -10,7 +10,9 @@
  * @api public
  */
 
-module.exports.titleize = function(str) {
+capitalize = require('./capitalize');
+
+module.exports = function(str) {
   if (str && typeof str === 'string') {
     var title = str.replace(/[ \-_]+/g, ' ');
     var words = title.match(/\w+/g);
@@ -19,7 +21,7 @@ module.exports.titleize = function(str) {
     var i = 0;
     while (len--) {
       var word = words[i++];
-      res.push(exports.capitalize(word));
+      res.push(capitalize(word));
     }
     return res.join(' ');
   }
