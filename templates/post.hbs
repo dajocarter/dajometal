@@ -1,7 +1,7 @@
 {{> header }}
   <main class="post">
     <article>
-      <h1>{{ title }}</h1>
+      <h1>{{titleize title }}</h1>
 
       <div class="post-content">
         {{{ contents }}}
@@ -12,9 +12,9 @@
         <script>
           (function() {  // DON'T EDIT BELOW THIS LINE
               var d = document, s = d.createElement('script');
-              
+
               s.src = '//dajometal.disqus.com/embed.js';
-              
+
               s.setAttribute('data-timestamp', +new Date());
               (d.head || d.body).appendChild(s);
           })();
