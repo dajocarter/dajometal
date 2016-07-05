@@ -28,21 +28,24 @@ $(document).ready(function() {
     });
   });
 
-  $('.popup-gallery').magnificPopup({
-    delegate: 'a',
-    type: 'image',
-    tLoading: 'Loading image #%curr%...',
-    mainClass: 'mfp-img-mobile',
-    gallery: {
-      enabled: true,
-      navigateByImgClick: true,
-      preload: [0, 1]
-    },
-    image: {
-      tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-      titleSrc: function(item) {
-        return item.el.attr('title');
+  $('.gallery-link').each(function() {
+    var galleryId = $(this).attr('href');
+    var slides = $(galleryId + ' .slide');
+    var items = [];
+    slides.each(function(idx, elt) {
+      items.push({
+        src: slides[idx],
+        type: 'inline'
+      })
+    });
+    $(this).magnificPopup({
+      items: items,
+      mainClass: 'my-mfp-zoom-in',
+      gallery: {
+        enabled: true,
+        navigateByImgClick: true,
+        preload: [0, 1]
       }
-    }
+    });
   });
 });
