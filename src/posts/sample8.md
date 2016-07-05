@@ -1,7 +1,7 @@
 ---
 title: 'Sample Post 8'
 description: 'Just a sample post'
-published: 2015-08-08
+published: 2015-08-08T12:00:00-04:00
 layout: post.hbs
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 'Metalsmith'
 description: 'Using Metalsmith to create a static site'
-published: 2016-06-06
+published: 2016-06-06T12:00:00-04:00
 layout: post.hbs
 ---
 

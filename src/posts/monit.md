@@ -1,7 +1,7 @@
 ---
 title: 'Using Monit and Slack to monitor your server'
 description: 'Using Monit to monitor a Ubuntu server and send alerts to a Slack channel.'
-published: 2016-06-08
+published: 2016-06-08T12:00:00-04:00
 layout: post.hbs
 ---
 

@@ -10,8 +10,8 @@
     "abbr": "NIU",
     "location": "DeKalb, IL",
     "dates": {
-      "from": "01/01/2012",
-      "to": "05/01/2013"
+      "from": "2012-01-01T12:00:00-04:00",
+      "to": "2012-05-01T12:00:00-04:00"
     },
     "degree": "Master of Science in Mathematics",
     "poi": [
@@ -22,8 +22,8 @@
     "abbr": "CSUN",
     "location": "Northridge, CA",
     "dates": {
-      "from": "08/01/2009",
-      "to": "05/01/2011"
+      "from": "2009-08-01T12:00:00-04:00",
+      "to": "2011-05-01T12:00:00-04:00"
     },
     "degree": "Bachelor of Arts in Mathematics",
     "poi": [
@@ -34,7 +34,7 @@
     "employer": "Tribeswell LLC",
     "location": "Bloomington, IN",
     "dates": {
-      "from": "11/15/2014",
+      "from": "2014-11-15T12:00:00-04:00",
       "to": "Present"
     },
     "position": "Director of Technical Services",
@@ -47,8 +47,8 @@
     "employer": "Hanapin Marketing",
     "location": "Bloomington, IN",
     "dates": {
-      "from": "05/15/2014",
-      "to": "09/01/2014"
+      "from": "2014-05-15T12:00:00-04:00",
+      "to": "2014-09-01T12:00:00-04:00"
     },
     "position": "Front-End Web Development Intern",
     "poi": [
@@ -59,8 +59,8 @@
     "employer": "Campus Tutoring Services",
     "location": "Bloomington, IN",
     "dates": {
-      "from": "09/15/2013",
-      "to": "05/01/2015"
+      "from": "2013-09-15T12:00:00-04:00",
+      "to": "2015-05-01T12:00:00-04:00"
     },
     "position": "Lead Mathematics Tutor",
     "poi": [
