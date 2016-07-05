@@ -11,7 +11,8 @@ var Metalsmith = require('./node_modules/metalsmith'),
   md = require('./node_modules/metalsmith-markdownit'),
   metadata = require('./node_modules/metalsmith-metadata'),
   pagination = require('./node_modules/metalsmith-pagination'),
-  permalinks = require('./node_modules/metalsmith-permalinks');
+  permalinks = require('./node_modules/metalsmith-permalinks'),
+  sitemap = require('./node_modules/metalsmith-sitemap');
 
 var markdown = md('default');
 markdown.parser.use(emoji);
@@ -68,6 +69,9 @@ Metalsmith(__dirname)
     directory: 'templates',
     partials: 'partials',
     rename: true
+  }))
+  .use(sitemap({
+    hostname: 'https://dajometal.surge.sh'
   }))
   .build(function(err) {
     if (err) console.log(err);

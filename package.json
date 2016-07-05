@@ -43,6 +43,7 @@
     "metalsmith-pagination": "^1.4.0",
     "metalsmith-permalinks": "^0.5.0",
     "metalsmith-register-helpers": "^0.1.2",
+    "metalsmith-sitemap": "^1.0.0",
     "moment": "^2.13.0",
     "normalize.css": "^4.1.1",
     "surge": "^0.18.0"

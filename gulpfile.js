@@ -14,7 +14,8 @@ var gulp = require('gulp'),
   md = require('./node_modules/metalsmith-markdownit'),
   metadata = require('./node_modules/metalsmith-metadata'),
   pagination = require('./node_modules/metalsmith-pagination'),
-  permalinks = require('./node_modules/metalsmith-permalinks');
+  permalinks = require('./node_modules/metalsmith-permalinks'),
+  sitemap = require('./node_modules/metalsmith-sitemap');
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -124,6 +125,9 @@ gulp.task('metalsmith', function() {
       directory: 'templates',
       partials: 'partials',
       rename: true
+    }))
+    .use(sitemap({
+      hostname: 'https://dajometal.surge.sh'
     }))
     .build(function(err) {
       if (err) console.log(err);
