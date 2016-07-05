@@ -1,4 +1,38 @@
+.posts {
+  h1 {
+    margin: 2rem auto;
+    border-bottom: 1px solid $teal;
+    padding-bottom: 0.5rem;
+  }
+
+  .post-info {
+    color: $orange;
+  }
+
+  .date {
+    margin-right: 0.5rem;
+  }
+
+  .disqus-comment-count {
+    margin-left: .5rem;
+  }
+
+  .read-more {
+    background-color: $lightgray;
+    color: $white;
+    margin: 1rem 0 2rem;
+    border-color: $teal;
+
+    &:hover, &:focus {
+      background-color: $teal;
+      color: $white;
+    }
+  }
+}
+
 article {
+  margin-bottom: 2rem;
+
   h1 {
     text-align: center;
     font-size: 3rem;
