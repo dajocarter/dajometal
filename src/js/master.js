@@ -14,14 +14,14 @@ var init = {
   }
 };
 
-document.addEventListener('DOMContentLoaded', function(event) {
+document.addEventListener('DOMContentLoaded', function() {
   init.headroom();
   init.perfectCircles();
 });
 
 $(document).ready(function() {
-  $('a[href^="#"]').click(function(e) {
-    e.preventDefault();
+  $('a.scroll, .scroll a').on('click', function(event) {
+    event.preventDefault();
     $(window).stop(true).scrollTo(this.hash, {
       duration:1000, 
       interrupt:true
