@@ -27,25 +27,27 @@ $(document).ready(function() {
       interrupt:true
     });
   });
-
-  $('.gallery-link').each(function() {
-    var galleryId = $(this).attr('href');
-    var slides = $(galleryId + ' .slide');
-    var items = [];
-    slides.each(function(idx, elt) {
-      items.push({
-        src: slides[idx],
-        type: 'inline'
-      })
+  
+  if ($(window).width() > 767) {
+    $('.gallery-link').each(function() {
+      var galleryId = $(this).attr('href');
+      var slides = $(galleryId + ' .slide');
+      var items = [];
+      slides.each(function(idx, elt) {
+        items.push({
+          src: slides[idx],
+          type: 'inline'
+        })
+      });
+      $(this).magnificPopup({
+        items: items,
+        mainClass: 'my-mfp-zoom-in',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1]
+        }
+      });
     });
-    $(this).magnificPopup({
-      items: items,
-      mainClass: 'my-mfp-zoom-in',
-      gallery: {
-        enabled: true,
-        navigateByImgClick: true,
-        preload: [0, 1]
-      }
-    });
-  });
+  }
 });
