@@ -6,9 +6,7 @@
           <article>
             <header>
               <h2><a href="/{{ path }}">{{titleize title }}</a></h2>
-              <p class="post-info">
-                <span class="date"><i class="icon icon-clock-o"></i> {{ moment published format="MMMM Do, YYYY" }}</span> | <span class="disqus-comment-count" data-disqus-url="{{ ../site.url }}/{{ path }}"><i class="icon icon-comments"></i> 0 Comments</span>
-              </p>
+              <p class="post-info"><i class="icon icon-clock-o"></i> {{ moment published format="MMMM Do, YYYY" }}</p>
             </header>
             {{{ excerpt }}}
             <a class="read-more button" href="/{{ path }}">Read More <i class="icon icon-chevron-right"></i></a>
