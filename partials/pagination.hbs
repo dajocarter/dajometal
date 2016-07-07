@@ -1,9 +1,10 @@
-<ul class="nav pagination">
-  {{#if pagination.previous }}
-    <li><a href="/{{removeIndex pagination.previous.path }}"><i class="icon icon-chevron-left"></i> Previous</a></li>
-  {{/if}}
+<div class="pagination">
+{{#if pagination.previous }}
+  <a class="paginate outside button" href="/{{removeIndex pagination.previous.path }}"><i class="icon icon-chevron-left"></i> <i class="icon icon-chevron-left"></i></a>
+{{/if}}
+  <ul class="nav">
   {{#each pagination.pages }}
-    <li>
+    <li class="paginate button">
     {{#unlessCurrentPage ../path compare=pagination.num }}
       {{#if @first }}
       <a href="/blog/">
@@ -17,7 +18,8 @@
     {{/unlessCurrentPage}}
     </li>
   {{/each}}
-  {{#if pagination.next }}
-    <li><a href="/{{removeIndex pagination.next.path }}">Next <i class="icon icon-chevron-right"></i></a></li>
-  {{/if}}
-</ul>
+  </ul>
+{{#if pagination.next }}
+  <a class="paginate outside button" href="/{{removeIndex pagination.next.path }}"><i class="icon icon-chevron-right"></i> <i class="icon icon-chevron-right"></i></a>
+{{/if}}
+</div>

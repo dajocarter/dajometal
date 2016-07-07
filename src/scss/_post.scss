@@ -70,5 +70,14 @@ article {
 }
 
 .pagination {
+  display: flex;
   justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 305px;
+
+  .nav {
+    justify-content: center;
+    flex: 3;
+  }
 }

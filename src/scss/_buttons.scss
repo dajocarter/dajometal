@@ -32,20 +32,10 @@ button, .button {
   &.paginate {
     flex: 1;
     padding: 0.5rem 0.25rem;
-    color: rgba($white, 0.25);
-    border-color: rgba($white, 0.25);
-    background-color: rgba($gray, 0.25);
+    color: $white;
 
     a, &.outside {
       color: $teal;
-      border-color: rgba($white, 1);
-      background-color: rgba($gray, 1);
-    }
-
-    a {
-      display: block;
-      height: 100%;
-      width: 100%;
     }
   }
 }
