@@ -13,7 +13,7 @@
 
 module.exports = function(context, options) {
   var path = context.split('/');
-  if ((path.length > 2 && path[1] === options.hash.compare) || (path.length == 2 && options.hash.compare == 1)) {
+  if ((path.length > 2 && path[1] == options.hash.compare) || (path.length == 2 && options.hash.compare == 1)) {;
     return options.inverse(this);
   }
   return options.fn(this);
