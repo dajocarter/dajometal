@@ -76,8 +76,14 @@ article {
   margin: 0 auto;
   max-width: 305px;
 
-  .nav {
+  .pages {
+    display: flex;
     justify-content: center;
     flex: 3;
+
+    .paginate {
+      flex: 0 0 auto;
+      padding: 1rem;
+    }
   }
 }
