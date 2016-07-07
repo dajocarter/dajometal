@@ -1,8 +1,8 @@
 <div class="pagination">
 {{#if pagination.previous }}
-  <a class="paginate outside button" href="/{{removeIndex pagination.previous.path }}"><i class="icon icon-chevron-left"></i> <i class="icon icon-chevron-left"></i></a>
+  <a class="paginate button" href="/{{removeIndex pagination.previous.path }}"><i class="icon icon-chevron-left"></i> <i class="icon icon-chevron-left"></i></a>
 {{ else }}
-  <button class="paginate outside button" disabled="disabled"><i class="icon icon-chevron-left"></i> <i class="icon icon-chevron-left"></i></button>
+  <button class="paginate button" disabled="disabled"><i class="icon icon-chevron-left"></i> <i class="icon icon-chevron-left"></i></button>
 {{/if}}
   <div class="pages">
   {{#each pagination.pages }}
@@ -22,8 +22,8 @@
   {{/each}}
   </div>
 {{#if pagination.next }}
-  <a class="paginate outside button" href="/{{removeIndex pagination.next.path }}"><i class="icon icon-chevron-right"></i> <i class="icon icon-chevron-right"></i></a>
+  <a class="paginate button" href="/{{removeIndex pagination.next.path }}"><i class="icon icon-chevron-right"></i> <i class="icon icon-chevron-right"></i></a>
 {{ else }}
-  <button class="paginate outside button" disabled="disabled"><i class="icon icon-chevron-right"></i> <i class="icon icon-chevron-right"></i></button>
+  <button class="paginate button" disabled="disabled"><i class="icon icon-chevron-right"></i> <i class="icon icon-chevron-right"></i></button>
 {{/if}}
 </div>
