@@ -1,0 +1,51 @@
+button, .button {
+  display: block;
+  max-width: 300px;
+  margin: 2rem auto;
+  border: 2px solid $white;
+  border-radius: 4px;
+  background-color: $gray;
+  color: $white;
+  padding: 1rem 2rem;
+  text-align: center;
+  transition: all 0.5s ease;
+
+  &:hover, &:focus {
+    background-color: $white;
+    color: $black;
+  }
+
+  &.read-more {
+    border-color: $teal;
+    background-color: $lightgray;
+    color: $white;
+    margin: 1rem 0 2rem;
+    padding: 0.5rem;
+    max-width: 120px;
+
+    &:hover, &:focus {
+      background-color: $teal;
+      color: $white;
+    }
+  }
+
+  &.paginate {
+    flex: 1;
+    padding: 0.5rem 0.25rem;
+    color: rgba($white, 0.25);
+    border-color: rgba($white, 0.25);
+    background-color: rgba($gray, 0.25);
+
+    a, &.outside {
+      color: $teal;
+      border-color: rgba($white, 1);
+      background-color: rgba($gray, 1);
+    }
+
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

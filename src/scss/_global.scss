@@ -50,24 +50,6 @@ a {
   &:hover, &:focus {
     color: $orange;
   }
-
-  &.button {
-    display: block;
-    max-width: 300px;
-    margin: 2rem auto;
-    border: 2px solid $white;
-    border-radius: 4px;
-    background-color: $gray;
-    color: $white;
-    padding: 1rem 2rem;
-    text-align: center;
-    transition: all 0.5s ease;
-
-    &:hover, &:focus {
-      background-color: $white;
-      color: $black;
-    }
-  }
 }
 
 img {
