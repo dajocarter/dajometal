@@ -77,9 +77,9 @@
       "Ionic", "Angular 1", "Firebase", "Pushwoosh"
     ],
     "gallery": [{
-      "title": "Easy To Create Groups",
+      "title": "Group-Based Tinder",
       "image": "necter1.jpg",
-      "description": "This is an example description."
+      "description": "Necter allows users to form groups of up to five Facebook friends and swipe through other groups in their area similar to Tinder."
     }, {
       "title": "Connect With Others",
       "image": "necter2.jpg",
