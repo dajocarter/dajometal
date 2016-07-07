@@ -1,0 +1,23 @@
+<ul class="nav pagination">
+  {{#if pagination.previous }}
+    <li><a href="/{{removeIndex pagination.previous.path }}"><i class="icon icon-chevron-left"></i> Previous</a></li>
+  {{/if}}
+  {{#each pagination.pages }}
+    <li>
+    {{#unlessCurrentPage ../path compare=pagination.num }}
+      {{#if @first }}
+      <a href="/blog/">
+      {{else}}
+      <a href="/blog/{{ pagination.num }}/">
+      {{/if}}
+    {{/unlessCurrentPage}}
+      {{ pagination.num }}
+    {{#unlessCurrentPage ../path compare=pagination.num }}
+      </a>
+    {{/unlessCurrentPage}}
+    </li>
+  {{/each}}
+  {{#if pagination.next }}
+    <li><a href="/{{removeIndex pagination.next.path }}">Next <i class="icon icon-chevron-right"></i></a></li>
+  {{/if}}
+</ul>
