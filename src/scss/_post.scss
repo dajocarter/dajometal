@@ -5,8 +5,49 @@
     padding-bottom: 0.5rem;
   }
 
+  article {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .post-info,
+  .content {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
   .post-info {
+    text-align: center;
+    width: 25%;
+
+    p {
+      margin: 0 auto;
+      width: 75%;
+
+      &.month {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .content {
+    width: 75%;
+  }
+
+  .day {
     color: $orange;
+    font-size: 3rem;
+    border-bottom: 2px solid $white;
+  }
+
+  .month,
+  .year {
+    color: $teal;
+    font-size: 1.25rem;
+  }
+
+  .month {
+    text-transform: uppercase;
   }
 
   .read-more {
@@ -18,6 +59,16 @@
     &:hover, &:focus {
       background-color: $teal;
       color: $white;
+    }
+  }
+
+  @media (min-width: 767px) {
+    .day {
+      font-size: 5rem;
+    }
+
+    .month, .year {
+      font-size: 2rem;
     }
   }
 }

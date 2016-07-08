@@ -4,12 +4,16 @@
       {{#if collections.posts }}
         {{#each pagination.files }}
           <article>
-            <header>
+            <div class="post-info">
+              <p class="day">{{ moment published format="D" }}</p>
+              <p class="month">{{ moment published format="MMM" }}</p>
+              <p class="year">{{ moment published format="YYYY" }}</p>
+            </div>
+            <div class="content">
               <h2><a href="/{{ path }}">{{titleize title }}</a></h2>
-              <p class="post-info"><i class="icon icon-clock-o"></i> {{ moment published format="MMMM Do, YYYY" }}</p>
-            </header>
-            {{{ excerpt }}}
-            <a class="read-more button" href="/{{ path }}">Read More <i class="icon icon-chevron-right"></i></a>
+              {{{ excerpt }}}
+              <a class="read-more button" href="/{{ path }}">Read More <i class="icon icon-chevron-right"></i></a>
+            </div>
           </article>
         {{/each}}
 
