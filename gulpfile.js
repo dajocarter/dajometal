@@ -119,7 +119,7 @@ gulp.task('metalsmith', function() {
       rename: true
     }))
     .use(sitemap({
-      hostname: 'https://dajometal.surge.sh'
+      hostname: 'https://app.netlify.com/sites/estates-officer-alerts-20653'
     }))
     .build(function(err) {
       if (err) console.log(err);
