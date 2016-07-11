@@ -39,12 +39,13 @@
     "metalsmith-register-helpers": "^0.1.2",
     "metalsmith-sitemap": "^1.0.0",
     "moment": "^2.13.0",
-    "normalize.css": "^4.1.1"
+    "normalize.css": "^4.1.1",
+    "pubstorm": "^0.2.0"
   },
   "scripts": {
     "start": "./node_modules/.bin/gulp serve",
     "build": "./node_modules/.bin/gulp build",
-    "deploy": "./node_modules/.bin/gulp build && netlify deploy"
+    "deploy": "./node_modules/.bin/gulp build && storm publish"
   },
   "keywords": [
     "dajocarter",
