@@ -51,7 +51,7 @@
   "scripts": {
     "start": "./node_modules/.bin/gulp serve",
     "build": "./node_modules/.bin/gulp build",
-    "deploy": "./node_modules/.bin/gulp build && surge --project ./build/ --domain https://dajometal.surge.sh"
+    "deploy": "./node_modules/.bin/gulp build && git add build/* --all && git commit -m 'New deployment' && git subtree push --prefix build origin gh-pages"
   },
   "keywords": [
     "dajocarter",
