@@ -39,6 +39,7 @@
     "metalsmith-register-helpers": "^0.1.2",
     "metalsmith-sitemap": "^1.0.0",
     "moment": "^2.13.0",
+    "netlify-cli": "^1.0.2",
     "normalize.css": "^4.1.1"
   },
   "scripts": {
