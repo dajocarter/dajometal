@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+    <title>Using Monit And Slack To Monitor Your Server</title>
+    <meta name="description" content="Using Monit to monitor a Ubuntu server and send alerts to a Slack channel.">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://use.fonticons.com/621f5d80.js"></script>
+    <link href="/css/master.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <header id="header" class="animated">
+      <div class="wrap">
+        <a class="logo" href="/">dajocarter</a>
+        <ul class="nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+    </header>
+  <main class="post">
+    <article>
+      <h1>Using Monit And Slack To Monitor Your Server</h1>
+
+      <div class="post-content">
+        <p>This is the introductory sentence. Something about needing to monitor your servers. This post will show you how to install Monit on a Ubuntu server to send alerts to you on Slack. If you're not using Slack, this post is still applicable as intructions for installation.</p>
+<h2>Installing Monit</h2>
+<p>This is as easy as <code>sudo apt-get install monit</code>. Just a heads-up to ServerPilot users, you'll have to SSH in to your server as <code>root</code> or another user with root/sudo priviledges. If you do SSH in as root, you can leave off all of the <code>sudo</code>s.</p>
+<p>Now that Monit is installed, the next step is to turn it on so <code>cd /etc/monit</code>. If you <code>ls</code> here, you'll see the following directory structure:</p>
+<pre><code>/etc/monit/
+|-conf.d
+|-monitrc
+|-monitrc.d
+  |-blah
+  |-blah
+  |-blah
+|-templates
+  |-blah
+  |-blah
+  |-blah
+</code></pre>
+<h2>Configure Monit</h2>
+<p>The first thing we'll need to do is edit the <code>monitrc</code> file so <code>sudo nano monitrc</code>. Now scroll down and uncomment the following lines:</p>
+<pre><code>set httpd port 2812 and
+use address localhost
+allow localhost
+</code></pre>
+<p>Then scroll down just a bit to under the Services section and uncomment the part about checking general system resources. <strong>Be sure</strong> to change <code>myhost.mydomain.tld</code> to match your server. So you should have the following lines uncommented:</p>
+<pre><code>check system myhost.mydomain.tld
+  if loadavg (1min) &gt; 4 then alert
+  if loadavg (5min) &gt; 2 then alert
+  if memory usage &gt; 75% then alert
+  if swap usage &gt; 20% then alert
+  if cpu usage (user) &gt; 70% then alert
+  if cpu usage (system) &gt; 30% then alert
+  if cpu usage (wait) &gt; 20% then alert
+</code></pre>
+<p>Now that Monit is set up, we need to configure it to monitor our chosen services. If you read the <code>monitrc</code> file, you would have found that the last line is to include any files in the <code>conf.d</code> folder. This is where we'll put our custom services file so <code>sudo nano conf.d/services</code>. You can check out Monit's <a href="https://mmonit.com/wiki/Monit/ConfigurationExamples">configuration examples</a> but here's my file:</p>
+<pre><code>check process nginx with pidfile /var/run/nginx-sp.pid
+  group serverpilot
+  start program = &quot;/etc/init.d/nginx-sp start&quot;
+  stop program = &quot;/etc/init.d/nginx-sp stop&quot;
+  if changed pid then exec &quot;/etc/monit/slack.sh&quot;
+
+check process mysql with pidfile /var/run/mysqld/mysqld.pid
+  start program = &quot;/etc/init.d/mysql start&quot;
+  stop program = &quot;/etc/init.d/mysql stop&quot;
+  if failed unixsocket /var/run/mysqld/mysqld.sock then restart
+  if 5 restarts within 5 cycles then timeout
+  if changed pid then exec &quot;/etc/monit/slack.sh&quot;
+
+check process php5-fpm with pidfile /var/run/php5.5-fpm-sp.pid
+  start program = &quot;/etc/init.d/php5.5-fpm-sp start&quot;
+  stop program = &quot;/etc/init.d/php5.5-fpm-sp stop&quot;
+  if changed pid then exec &quot;/etc/monit/slack.sh&quot;
+</code></pre>
+<p>The <code>-sp</code> suffix is if you're using ServerPilot, but if you're not just leave it off. If you're in doubt of the name of the pid, just <code>ls /var/run</code> to double-check. Once that's done we can check that everything is configured correctly with <code>sudo monit -t</code>. If successful, then restart Monit with <code>sudo service monit restart</code> and start monitoring your configured services with <code>sudo monit start all</code>. Finally, you can double-check that everything is running with <code>sudo monit status</code>.</p>
+<h2>Send Monit Alerts to Slack</h2>
+<p>The first thing you'll have to do is set up an Incoming Webhook with your Slack team and copy the url for later. Now we'll configure a payload to send to Slack. So from still within the <code>/etc/monit</code> directory, go ahead and <code>sudo nano slack.sh</code>. <strong>Be sure</strong> to change the channel, username, and emoji name to your choosing.</p>
+<pre><code>#!/bin/sh
+/usr/bin/curl \
+  -X POST \
+  -s \
+  --data-urlencode &quot;payload={ \
+    \&quot;channel\&quot;: \&quot;#slack-channel\&quot;, \
+    \&quot;username\&quot;: \&quot;monit-serverName\&quot;, \
+    \&quot;icon_emoji\&quot;: \&quot;:emoji-name:\&quot;, \
+    \&quot;text\&quot;: \&quot;$MONIT_DATE - $MONIT_SERVICE - $MONIT_DESCRIPTION\&quot; \
+  }&quot; \
+  https://hooks.slack.com/services/blahblah/blahblah/blahblahblah
+</code></pre>
+<p>Now we need to make sure that Monit can execute this script so <code>chmod 744 slack.sh</code>. Next, we need to tell Monit to run the Slack script when it needs to send an alert so <code>sudo nano monitrc</code>. In the section about checking general system resources, replace <code>then alert</code> with <code>then exec &quot;/etc/monit/slack.sh&quot; else if succeeded then exec &quot;/etc/monit/slack.sh&quot;</code>. At the end it should look like this:</p>
+<pre><code>check system myhost.mydomain.tld
+  if loadavg (1min) &gt; 4 then exec &quot;/etc/monit/slack.sh&quot; else if succeeded then exec &quot;/etc/monit/slack.sh&quot;
+  if loadavg (5min) &gt; 2 then exec &quot;/etc/monit/slack.sh&quot; else if succeeded then exec &quot;/etc/monit/slack.sh&quot;
+  if memory usage &gt; 75% then exec &quot;/etc/monit/slack.sh&quot; else if succeeded then exec &quot;/etc/monit/slack.sh&quot;
+  if swap usage &gt; 40% then exec &quot;/etc/monit/slack.sh&quot; else if succeeded then exec &quot;/etc/monit/slack.sh&quot;
+  if cpu usage (user) &gt; 70% then exec &quot;/etc/monit/slack.sh&quot; else if succeeded then exec &quot;/etc/monit/slack.sh&quot;
+  if cpu usage (system) &gt; 30% then exec &quot;/etc/monit/slack.sh&quot; else if succeeded then exec &quot;/etc/monit/slack.sh&quot;
+  if cpu usage (wait) &gt; 20% then exec &quot;/etc/monit/slack.sh&quot; else if succeeded then exec &quot;/etc/monit/slack.sh&quot;
+</code></pre>
+<p>Finally, we can make sure everything is configured correctly with <code>sudo monit -t</code> and restart Monit to put our changes in to effect with <code>sudo service monit restart</code>.</p>
+
+      </div>
+
+      <footer></footer>
+    </article>
+  </main>
+    <footer id="footer" class="wrap">
+      <a class="scroll" href="#landing"><i class="icon icon-chevron-up"></i></a>
+      <ul class="nav social">
+          <li>
+            <a target="_blank" class="Email" href="mailto:dajocarter@gmail.com" title="Email dajocarter@gmail.com">
+              <i class="icon icon-envelope"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" class="GitHub" href="//github.com/dajocarter" title="GitHub @dajocarter">
+              <i class="icon icon-github"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" class="Twitter" href="//twitter.com/dajocarter" title="Twitter @dajocarter">
+              <i class="icon icon-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" class="Instagram" href="//instagram.com/dajocarter" title="Instagram @dajocarter">
+              <i class="icon icon-instagram"></i>
+            </a>
+          </li>
+      </ul>      <p class="copyright">&copy; 2016 dajocarter</p>
+    </footer>
+
+    <script src="/js/master.js"></script>
+  </body>
+</html>
