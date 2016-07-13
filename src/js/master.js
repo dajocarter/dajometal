@@ -11,11 +11,13 @@ $(document).ready(function() {
         var height = socialIcons[i].offsetHeight;
         socialIcons[i].style.width = height + 'px';
       }
-      return false;
+      return;
     }
   };
+
   init.headroom();
   init.perfectCircles();
+  
   $('a.scroll, .scroll a').on('click', function(event) {
     event.preventDefault();
     $(window).stop(true).scrollTo(this.hash, {
@@ -23,6 +25,14 @@ $(document).ready(function() {
       interrupt:true
     });
   });
+
+  $(window).on('load resize', function() {
+    var profile = document.querySelector('.profile');
+    var width = profile.offsetWidth;
+    profile.style.height = width + 'px';
+    return;
+  });
+
 
   if ($(window).width() > 767) {
     $('.gallery-link').each(function() {
