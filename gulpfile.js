@@ -34,6 +34,8 @@ markdown.parser.use(emoji);
 
 gulp.task('img', function() {
   return gulp.src('src/img/*.{png,PNG,jpg,JPG,jpeg,JPEG,gif,GIF}')
+    .pipe($.newer('build/img/'))
+    .pipe($.imagemin())
     .pipe(gulp.dest('build/img/'))
     .pipe(browserSync.stream());
 });
@@ -46,6 +48,11 @@ gulp.task('js', function() {
       'node_modules/jquery.scrollto/jquery.scrollTo.js',
       'src/js/master.js'
     ])
+    .pipe($.concat('master.js', {
+      newLine: ';'
+    }))
+    .pipe($.uglify())
+    .pipe($.rename('master.min.js'))
     .pipe(gulp.dest('build/js'))
     .pipe(browserSync.stream());
 });
@@ -59,6 +66,7 @@ gulp.task('sass', function() {
     .pipe($.autoprefixer({
       browsers: AUTOPREFIXER_BROWSERS
     }))
+    .pipe($.concat('master.css'))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('build/css'))
     .pipe(browserSync.stream());
@@ -119,7 +127,7 @@ gulp.task('metalsmith', function() {
       rename: true
     }))
     .use(sitemap({
-      hostname: 'http://dajometal.pubstorm.site'
+      hostname: 'https://dajometal.surge.sh'
     }))
     .build(function(err) {
       if (err) console.log(err);
@@ -128,7 +136,7 @@ gulp.task('metalsmith', function() {
 
 gulp.task('watch', function() {
   gulp.watch(['src/**/*', 'templates/**/*.hbs', 'partials/**/*.hbs'], ['metalsmith']).on('change', browserSync.reload);
-  gulp.watch(['src/img/**/*.{png,PNG,jpg,JPG,jpeg,JPEG,gif,GIF}'], ['img']);
+  gulp.watch(['src/img/*'], ['img']);
   gulp.watch(['src/js/**/*.js'], ['js']);
   gulp.watch(['src/scss/**/*.scss'], ['sass']);
 });
