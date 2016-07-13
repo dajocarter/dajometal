@@ -51,8 +51,8 @@ gulp.task('js', function() {
     .pipe($.concat('master.js', {
       newLine: ';'
     }))
-    .pipe($.uglify(false))
-    //.pipe($.rename('master.min.js'))
+    .pipe($.uglify())
+    .pipe($.rename('master.min.js'))
     .pipe(gulp.dest('build/js'))
     .pipe(browserSync.stream());
 });
