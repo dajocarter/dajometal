@@ -46,6 +46,7 @@
     "metalsmith-sitemap": "^1.0.0",
     "moment": "^2.13.0",
     "normalize.css": "^4.1.1",
+    "pump": "^1.0.1",
     "surge": "^0.18.0"
   },
   "scripts": {
