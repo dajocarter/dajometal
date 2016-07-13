@@ -57,23 +57,27 @@ gulp.task('js', function(cb) {
     $.rename('master.min.js'),
     gulp.dest('build/js'),
     browserSync.stream()
-  ], cb
-  );
+  ], cb );
 });
 
-gulp.task('sass', function() {
-  return gulp.src(['node_modules/magnific-popup/dist/magnific-popup.css', 'src/scss/master.scss'])
-    .pipe($.sourcemaps.init())
-    .pipe($.sass({
+gulp.task('sass', function(cb) {
+  pump([
+    gulp.src([
+      'node_modules/magnific-popup/dist/magnific-popup.css',
+      'src/scss/master.scss'
+    ]),
+    $.sourcemaps.init(),
+    $.sass({
       outputStyle: 'compressed'
-    }).on('error', $.sass.logError))
-    .pipe($.autoprefixer({
+    }),
+    $.autoprefixer({
       browsers: AUTOPREFIXER_BROWSERS
-    }))
-    .pipe($.concat('master.min.css'))
-    .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('build/css'))
-    .pipe(browserSync.stream());
+    }),
+    $.concat('master.min.css'),
+    $.sourcemaps.write('.'),
+    gulp.dest('build/css'),
+    browserSync.stream()
+  ], cb );
 });
 
 gulp.task('metalsmith', function() {
