@@ -61,12 +61,12 @@ gulp.task('sass', function() {
   return gulp.src(['node_modules/magnific-popup/dist/magnific-popup.css', 'src/scss/master.scss'])
     .pipe($.sourcemaps.init())
     .pipe($.sass({
-      outputStyle: 'expanded'
+      outputStyle: 'compressed'
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer({
       browsers: AUTOPREFIXER_BROWSERS
     }))
-    .pipe($.concat('master.css'))
+    .pipe($.concat('master.min.css'))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('build/css'))
     .pipe(browserSync.stream());
