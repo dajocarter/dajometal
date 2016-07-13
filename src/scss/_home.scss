@@ -34,6 +34,18 @@
 }
 
 #about {
+  .profile {
+    border-radius: 50%;
+    max-width: 100%;
+    width: 225px;
+    height: 225px;
+    margin: 2rem auto;
+    border: 2px solid $white;
+    background-image: url('/img/profile.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
   h3 {
     margin-bottom: 0.5rem;
   }
