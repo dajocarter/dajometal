@@ -41,21 +41,24 @@ gulp.task('img', function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task('js', function() {
-  return gulp.src([
+gulp.task('js', function(cb) {
+  pump([
+    gulp.src([
       'node_modules/jquery/dist/jquery.js',
       'node_modules/headroom.js/dist/headroom.js',
       'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
       'node_modules/jquery.scrollto/jquery.scrollTo.js',
       'src/js/master.js'
-    ])
-    .pipe($.concat('master.js', {
+    ]),
+    $.concat('master.js', {
       newLine: ';'
-    }))
-    .pipe($.uglify())
-    .pipe($.rename('master.min.js'))
-    .pipe(gulp.dest('build/js'))
-    .pipe(browserSync.stream());
+    }),
+    $.uglify(),
+    $.rename('master.min.js'),
+    gulp.dest('build/js'),
+    browserSync.stream()
+  ], cb
+  );
 });
 
 gulp.task('sass', function() {
