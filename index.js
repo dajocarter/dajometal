@@ -71,7 +71,7 @@ Metalsmith(__dirname)
     rename: true
   }))
   .use(sitemap({
-    hostname: 'http://estates-officer-alerts-20653.netlify.com/'
+    hostname: 'http://dajometal.netlify.com/'
   }))
   .build(function(err) {
     if (err) console.log(err);
