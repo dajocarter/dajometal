@@ -15,6 +15,7 @@ var gulp = require('gulp'),
   metadata = require('./node_modules/metalsmith-metadata'),
   pagination = require('./node_modules/metalsmith-pagination'),
   permalinks = require('./node_modules/metalsmith-permalinks'),
+  pump = require('./node_modules/pump'),
   sitemap = require('./node_modules/metalsmith-sitemap');
 
 var AUTOPREFIXER_BROWSERS = [
