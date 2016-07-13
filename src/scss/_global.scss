@@ -54,14 +54,6 @@ a {
 
 img {
   max-width: 100%;
-
-  &.profile {
-    border-radius: 50%;
-    max-width: 225px;
-    margin: 2rem auto;
-    display: block;
-    border: 2px solid $white;
-  }
 }
 
 main {
