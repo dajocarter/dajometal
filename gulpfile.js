@@ -135,7 +135,7 @@ gulp.task('metalsmith', function() {
       rename: true
     }))
     .use(sitemap({
-      hostname: 'https://dajometal.surge.sh'
+      hostname: 'https://dajometal.pubstorm.site'
     }))
     .build(function(err) {
       if (err) console.log(err);
