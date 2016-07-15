@@ -71,7 +71,7 @@ Metalsmith(__dirname)
     rename: true
   }))
   .use(sitemap({
-    hostname: 'https://dajometal.surge.sh'
+    hostname: 'http://dajocarter.github.io/dajometal'
   }))
   .build(function(err) {
     if (err) console.log(err);
