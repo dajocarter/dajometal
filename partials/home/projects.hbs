@@ -4,7 +4,7 @@
   <ul class="list">
   {{#each site.projects }}
     <li class="project">
-      <div class="screenshot" style="background-image: url('/img/{{ screenshot }}');"><a class="gallery-link" href="#{{hyphenate title }}"></a></div>
+      <div class="screenshot" style="background-image: url('img/{{ screenshot }}');"><a class="gallery-link" href="#{{hyphenate title }}"></a></div>
       <h4 class="info"><span>{{titleize title }}</span><span>{{ year }}</span></h4>
       <p class="url"><a target="_blank" href="//{{ url }}">{{ url }}</a></p>
       <p class="tags"><i class="icon icon-tag"></i> {{#each tags}}{{ this }}{{#unless @last }}, {{/unless}}{{/each}}</p>
@@ -17,7 +17,7 @@
   <div id="{{hyphenate title }}" class="project-gallery mfp-hide">
     {{#each gallery }}
     <div class="slide">
-      <div class="img" style="background-image:url('/img/{{ image }}');"></div>
+      <div class="img" style="background-image:url('img/{{ image }}');"></div>
       <div class="content">
         <h3>{{ title }}</h3>
         <p>{{ description }}</p>
