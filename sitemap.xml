@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-<url> <loc>http://dajocarter.github.io/dajometal/blog/metalsmith/index.html</loc> </url>
-<url> <loc>http://dajocarter.github.io/dajometal/blog/sample-post-10/index.html</loc> </url>
-<url> <loc>http://dajocarter.github.io/dajometal/blog/sample-post/index.html</loc> </url>
-<url> <loc>http://dajocarter.github.io/dajometal/blog/using-monit-and-slack-to-monitor-your-server/index.html</loc> </url>
-<url> <loc>http://dajocarter.github.io/dajometal/blog/sample-post-2/index.html</loc> </url>
-<url> <loc>http://dajocarter.github.io/dajometal/blog/sample-post-3/index.html</loc> </url>
-<url> <loc>http://dajocarter.github.io/dajometal/blog/sample-post-4/index.html</loc> </url>
+<url> <loc>http://dajocarter.github.io/dajometal/blog/sample-post-7/index.html</loc> </url>
 <url> <loc>http://dajocarter.github.io/dajometal/blog/sample-post-5/index.html</loc> </url>
 <url> <loc>http://dajocarter.github.io/dajometal/blog/sample-post-6/index.html</loc> </url>
-<url> <loc>http://dajocarter.github.io/dajometal/blog/sample-post-7/index.html</loc> </url>
-<url> <loc>http://dajocarter.github.io/dajometal/blog/sample-post-8/index.html</loc> </url>
-<url> <loc>http://dajocarter.github.io/dajometal/blog/sample-post-9/index.html</loc> </url>
+<url> <loc>http://dajocarter.github.io/dajometal/blog/sample-post-4/index.html</loc> </url>
+<url> <loc>http://dajocarter.github.io/dajometal/blog/sample-post-3/index.html</loc> </url>
+<url> <loc>http://dajocarter.github.io/dajometal/blog/sample-post/index.html</loc> </url>
+<url> <loc>http://dajocarter.github.io/dajometal/blog/1/index.html</loc> </url>
 <url> <loc>http://dajocarter.github.io/dajometal/blog/2/index.html</loc> </url>
 <url> <loc>http://dajocarter.github.io/dajometal/blog/3/index.html</loc> </url>
-<url> <loc>http://dajocarter.github.io/dajometal/blog/1/index.html</loc> </url>
-<url> <loc>http://dajocarter.github.io/dajometal/blog/index.html</loc> </url>
+<url> <loc>http://dajocarter.github.io/dajometal/blog/using-monit-and-slack-to-monitor-your-server/index.html</loc> </url>
+<url> <loc>http://dajocarter.github.io/dajometal/blog/metalsmith/index.html</loc> </url>
+<url> <loc>http://dajocarter.github.io/dajometal/blog/sample-post-9/index.html</loc> </url>
+<url> <loc>http://dajocarter.github.io/dajometal/blog/sample-post-8/index.html</loc> </url>
+<url> <loc>http://dajocarter.github.io/dajometal/blog/sample-post-10/index.html</loc> </url>
+<url> <loc>http://dajocarter.github.io/dajometal/blog/sample-post-2/index.html</loc> </url>
 <url> <loc>http://dajocarter.github.io/dajometal/index.html</loc> </url>
+<url> <loc>http://dajocarter.github.io/dajometal/blog/index.html</loc> </url>
 <url> <loc>http://dajocarter.github.io/dajometal/404.html</loc> </url>
 </urlset>
