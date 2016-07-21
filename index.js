@@ -66,7 +66,7 @@ Metalsmith(__dirname)
     rename: true
   }))
   .use(sitemap({
-    hostname: 'http://dajometal.netlify.com/'
+    hostname: 'https://www.dajocarter.com'
   }))
   .build(function(err) {
     if (err) console.log(err);

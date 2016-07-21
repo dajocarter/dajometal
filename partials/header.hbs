@@ -6,17 +6,17 @@
     <title>{{#if title }}{{titleize title }}{{ else }} {{ site.author.name }} {{/if}}</title>
     <meta name="description" content="{{ description }}">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="/css/magnific-popup.css" rel="stylesheet">
-    <link href="/css/master.css" rel="stylesheet">
+    <link href="{{ site.url }}/css/magnific-popup.css" rel="stylesheet">
+    <link href="{{ site.url }}/css/master.css" rel="stylesheet">
   </head>
   <body>
 
     <header id="header" class="animated">
       <div class="wrap">
-        <a class="logo" href="/">dajocarter</a>
+        <a class="logo" href="{{ site.url }}">dajocarter</a>
         <ul class="nav">
-          <li><a href="/">Home</a></li>
-          <li><a href="/blog">Blog</a></li>
+          <li><a href="{{ site.url }}">Home</a></li>
+          <li><a href="{{ site.url }}/blog">Blog</a></li>
         </ul>
       </div>
     </header>

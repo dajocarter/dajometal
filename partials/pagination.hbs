@@ -1,6 +1,6 @@
 <div class="pagination">
 {{#if pagination.previous }}
-  <a class="paginate button" href="/{{removeIndex pagination.previous.path }}"><i class="icon icon-chevron-left"></i> <i class="icon icon-chevron-left"></i></a>
+  <a class="paginate button" href="{{ site.url }}/{{removeIndex pagination.previous.path }}"><i class="icon icon-chevron-left"></i> <i class="icon icon-chevron-left"></i></a>
 {{ else }}
   <button class="paginate button" disabled="disabled"><i class="icon icon-chevron-left"></i> <i class="icon icon-chevron-left"></i></button>
 {{/if}}
@@ -9,9 +9,9 @@
   
     {{#unlessCurrentPage ../path compare=pagination.num }}
       {{#if @first }}
-      <a class="paginate button" href="/blog/">{{ pagination.num }}</a>
+      <a class="paginate button" href="{{ site.url }}/blog/">{{ pagination.num }}</a>
       {{else}}
-      <a class="paginate button" href="/blog/{{ pagination.num }}/">{{ pagination.num }}</a>
+      <a class="paginate button" href="{{ site.url }}/blog/{{ pagination.num }}/">{{ pagination.num }}</a>
       {{/if}}
     {{/unlessCurrentPage}}
     
@@ -22,7 +22,7 @@
   {{/each}}
   </div>
 {{#if pagination.next }}
-  <a class="paginate button" href="/{{removeIndex pagination.next.path }}"><i class="icon icon-chevron-right"></i> <i class="icon icon-chevron-right"></i></a>
+  <a class="paginate button" href="{{ site.url }}/{{removeIndex pagination.next.path }}"><i class="icon icon-chevron-right"></i> <i class="icon icon-chevron-right"></i></a>
 {{ else }}
   <button class="paginate button" disabled="disabled"><i class="icon icon-chevron-right"></i> <i class="icon icon-chevron-right"></i></button>
 {{/if}}
