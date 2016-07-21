@@ -69,11 +69,6 @@ gulp.task('metalsmith', function() {
     .source('src')
     .destination('build')
     .clean(false)
-    .use(ignore([
-      'img/**/*',
-      'js/**/*',
-      'scss/**/*'
-    ]))
     .use(drafts())
     .use(metadata({
       site: 'config.json'
