@@ -33,7 +33,7 @@ var markdown = md('default');
 markdown.parser.use(emoji);
 
 gulp.task('img', function() {
-  return gulp.src('src/img/*.{png,PNG,jpg,JPG,jpeg,JPEG,gif,GIF}')
+  return gulp.src('img/*.{png,PNG,jpg,JPG,jpeg,JPEG,gif,GIF}')
     .pipe(gulp.dest('build/img/'))
     .pipe(browserSync.stream());
 });
@@ -44,14 +44,14 @@ gulp.task('js', function() {
       'node_modules/headroom.js/dist/headroom.js',
       'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
       'node_modules/jquery.scrollto/jquery.scrollTo.js',
-      'src/js/master.js'
+      'js/master.js'
     ])
     .pipe(gulp.dest('build/js'))
     .pipe(browserSync.stream());
 });
 
 gulp.task('sass', function() {
-  return gulp.src(['node_modules/magnific-popup/dist/magnific-popup.css', 'src/scss/master.scss'])
+  return gulp.src(['node_modules/magnific-popup/dist/magnific-popup.css', 'scss/master.scss'])
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       outputStyle: 'expanded'
@@ -122,10 +122,10 @@ gulp.task('metalsmith', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['src/**/*', 'templates/**/*.hbs', 'partials/**/*.hbs'], ['metalsmith']).on('change', browserSync.reload);
-  gulp.watch(['src/img/**/*.{png,PNG,jpg,JPG,jpeg,JPEG,gif,GIF}'], ['img']);
-  gulp.watch(['src/js/**/*.js'], ['js']);
-  gulp.watch(['src/scss/**/*.scss'], ['sass']);
+  gulp.watch(['src/**/*.md', 'src/**/*.json', 'templates/**/*.hbs', 'partials/**/*.hbs'], ['metalsmith']).on('change', browserSync.reload);
+  gulp.watch(['img/**/*.{png,PNG,jpg,JPG,jpeg,JPEG,gif,GIF}'], ['img']);
+  gulp.watch(['js/**/*.js'], ['js']);
+  gulp.watch(['scss/**/*.scss'], ['sass']);
 });
 
 gulp.task('browserSync', function() {
