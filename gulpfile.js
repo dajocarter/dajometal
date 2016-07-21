@@ -114,7 +114,7 @@ gulp.task('metalsmith', function() {
       rename: true
     }))
     .use(sitemap({
-      hostname: 'http://dajometal.netlify.com/'
+      hostname: 'https://www.dajocarter.com'
     }))
     .build(function(err) {
       if (err) console.log(err);
