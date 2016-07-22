@@ -38,6 +38,10 @@
     color: $white;
   }
 }
+
+.mfp-container button {
+  &, &:hover, &:focus {
+    background-color: transparent;
   }
 }
 
