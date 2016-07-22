@@ -76,7 +76,8 @@ gulp.task('metalsmith', function() {
     .use(collections({
       posts: {
         pattern: 'posts/*.md',
-        sortBy: 'date'
+        sortBy: 'published',
+        reverse: true
       }
     }))
     .use(ignore('*.json'))
