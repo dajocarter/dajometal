@@ -11,7 +11,7 @@ var gulp = require('gulp'),
   ignore = require('./node_modules/metalsmith-ignore'),
   inPlace = require('./node_modules/metalsmith-in-place'),
   layouts = require('./node_modules/metalsmith-layouts'),
-  md = require('./node_modules/metalsmith-markdownit'),
+  markdown = require('./node_modules/metalsmith-markdownit'),
   metadata = require('./node_modules/metalsmith-metadata'),
   pagination = require('./node_modules/metalsmith-pagination'),
   permalinks = require('./node_modules/metalsmith-permalinks'),
@@ -28,9 +28,6 @@ var AUTOPREFIXER_BROWSERS = [
   'android >= 4.4',
   'bb >= 10'
 ];
-
-var markdown = md('default');
-markdown.parser.use(emoji);
 
 gulp.task('img', function() {
   return gulp.src('img/*.{png,PNG,jpg,JPG,jpeg,JPEG,gif,GIF}')
@@ -81,7 +78,7 @@ gulp.task('metalsmith', function() {
       }
     }))
     .use(ignore('*.json'))
-    .use(markdown)
+    .use(markdown('default').use(emoji))
     .use(excerpts())
     .use(permalinks({
       relative: false,
