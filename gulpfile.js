@@ -112,9 +112,6 @@ gulp.task('metalsmith', function() {
         pattern: 'blog/:title'
       }]
     }))
-    .use(helpers({
-      directory: "helpers"
-    }))
     .use(pagination({
       'collections.posts': {
         perPage: 5,
@@ -126,6 +123,9 @@ gulp.task('metalsmith', function() {
           description: 'Blog posts by dajocarter'
         }
       }
+    }))
+    .use(helpers({
+      directory: "helpers"
     }))
     .use(layouts({
       engine: 'handlebars',

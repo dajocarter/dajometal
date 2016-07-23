@@ -64,9 +64,6 @@ Metalsmith(__dirname)
       pattern: 'blog/:title'
     }]
   }))
-  .use(helpers({
-    directory: "helpers"
-  }))
   .use(pagination({
     'collections.posts': {
       perPage: 5,
@@ -78,6 +75,9 @@ Metalsmith(__dirname)
         description: 'Blog posts by dajocarter'
       }
     }
+  }))
+  .use(helpers({
+    directory: "helpers"
   }))
   .use(layouts({
     engine: 'handlebars',
