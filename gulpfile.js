@@ -45,13 +45,17 @@ gulp.task('metalsmith', function() {
         // language is recognized by highlight.js
         if (lang && hljs.getLanguage(lang)) {
           try {
-            return hljs.highlight(lang, code).value
+            return '<pre class="hljs"><code>' +
+               hljs.highlight(lang, code, true).value +
+               '</code></pre>';
           } catch (__) {}
         }
 
         // fallback to auto
         try {
-          return hljs.highlightAuto(code).value
+          return '<pre class="hljs"><code>' +
+               hljs.highlightAuto(code, true).value +
+               '</code></pre>';
         } catch (__) {}
 
         // use external default escaping
