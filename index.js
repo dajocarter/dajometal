@@ -5,6 +5,7 @@ var Metalsmith = require('./node_modules/metalsmith'),
   excerpts = require('./node_modules/metalsmith-excerpts'),
   emoji = require('./node_modules/markdown-it-emoji'),
   helpers = require('./node_modules/metalsmith-register-helpers'),
+  hljs = require('./node_modules/highlight.js'),
   ignore = require('./node_modules/metalsmith-ignore'),
   inPlace = require('./node_modules/metalsmith-in-place'),
   layouts = require('./node_modules/metalsmith-layouts'),
@@ -30,7 +31,29 @@ Metalsmith(__dirname)
     }
   }))
   .use(ignore('*.json'))
-  .use(markdown('default').use(emoji))
+  .use(markdown('default', {
+    html: true,
+    linkify: true,
+    typographer: true,
+    highlight: (code, lang) => {
+      code = code.trim()
+
+      // language is recognized by highlight.js
+      if (lang && hljs.getLanguage(lang)) {
+        try {
+          return hljs.highlight(lang, code).value
+        } catch (__) {}
+      }
+
+      // fallback to auto
+      try {
+        return hljs.highlightAuto(code).value
+      } catch (__) {}
+
+      // use external default escaping
+      return '';
+    }
+  }).use(emoji))
   .use(excerpts())
   .use(permalinks({
     relative: false,
