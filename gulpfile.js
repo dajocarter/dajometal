@@ -18,50 +18,6 @@ var gulp = require('gulp'),
   permalinks = require('./node_modules/metalsmith-permalinks'),
   sitemap = require('./node_modules/metalsmith-sitemap');
 
-var AUTOPREFIXER_BROWSERS = [
-  'ie >= 10',
-  'ie_mob >= 10',
-  'ff >= 30',
-  'chrome >= 34',
-  'safari >= 7',
-  'opera >= 23',
-  'ios >= 7',
-  'android >= 4.4',
-  'bb >= 10'
-];
-
-gulp.task('img', function() {
-  return gulp.src('img/*.{png,PNG,jpg,JPG,jpeg,JPEG,gif,GIF}')
-    .pipe(gulp.dest('build/img/'))
-    .pipe(browserSync.stream());
-});
-
-gulp.task('js', function() {
-  return gulp.src([
-      'node_modules/jquery/dist/jquery.js',
-      'node_modules/headroom.js/dist/headroom.js',
-      'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
-      'node_modules/jquery.scrollto/jquery.scrollTo.js',
-      'js/master.js'
-    ])
-    .pipe(gulp.dest('build/js'))
-    .pipe(browserSync.stream());
-});
-
-gulp.task('sass', function() {
-  return gulp.src(['node_modules/magnific-popup/dist/magnific-popup.css', 'node_modules/highlight.js/styles/tomorrow-night-eighties.css', 'scss/master.scss'])
-    .pipe($.sourcemaps.init())
-    .pipe($.sass({
-      outputStyle: 'expanded'
-    }).on('error', $.sass.logError))
-    .pipe($.autoprefixer({
-      browsers: AUTOPREFIXER_BROWSERS
-    }))
-    .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('build/css'))
-    .pipe(browserSync.stream());
-});
-
 gulp.task('metalsmith', function() {
   Metalsmith(__dirname)
     .source('src')
@@ -142,6 +98,48 @@ gulp.task('metalsmith', function() {
     });
 });
 
+gulp.task('img',['metalsmith'], function() {
+  return gulp.src('img/*.{png,PNG,jpg,JPG,jpeg,JPEG,gif,GIF}')
+    .pipe(gulp.dest('build/img/'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('js', ['metalsmith'], function() {
+  return gulp.src([
+      'node_modules/jquery/dist/jquery.js',
+      'node_modules/headroom.js/dist/headroom.js',
+      'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+      'node_modules/jquery.scrollto/jquery.scrollTo.js',
+      'js/master.js'
+    ])
+    .pipe(gulp.dest('build/js'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('sass', ['metalsmith'], function() {
+  return gulp.src(['node_modules/magnific-popup/dist/magnific-popup.css', 'node_modules/highlight.js/styles/agate.css', 'scss/master.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      outputStyle: 'expanded'
+    }).on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+      browsers: [
+        'ie >= 10',
+        'ie_mob >= 10',
+        'ff >= 30',
+        'chrome >= 34',
+        'safari >= 7',
+        'opera >= 23',
+        'ios >= 7',
+        'android >= 4.4',
+        'bb >= 10'
+      ]
+    }))
+    .pipe($.sourcemaps.write('.'))
+    .pipe(gulp.dest('build/css'))
+    .pipe(browserSync.stream());
+});
+
 gulp.task('watch', function() {
   gulp.watch(['src/**/*.md', 'src/**/*.json', 'templates/**/*.hbs', 'partials/**/*.hbs'], ['metalsmith']).on('change', browserSync.reload);
   gulp.watch(['img/**/*.{png,PNG,jpg,JPG,jpeg,JPEG,gif,GIF}'], ['img']);
@@ -156,6 +154,6 @@ gulp.task('browserSync', function() {
   });
 });
 
-gulp.task('build', ['metalsmith', 'img', 'js', 'sass']);
+gulp.task('build', ['img', 'js', 'sass']);
 
 gulp.task('serve', ['build', 'browserSync', 'watch']);
