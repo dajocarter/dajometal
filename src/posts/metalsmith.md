@@ -1,8 +1,8 @@
 ---
 title: 'Metalsmith'
-description: 'Using Metalsmith to create a static site'
+description: 'My Metalsmith Workflow'
 published: 2016-06-06T12:00:00-04:00
 layout: post.hbs
 ---
 
-This post will chronicle my adventure in using Metalsmith as a static file generator to create my portfolio site. Something about it being just like Gulp.
+I knew I wanted to use a static site generator for this website but there's an abundant amount of them out there. I tried the Jekyll + GitHub Pages route once, but in all honesty, I forgot my workflow after leaving it for a few months. If I can't come back to a project after months of being away then the workflow is too tough to keep. 
