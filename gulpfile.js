@@ -49,7 +49,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('sass', function() {
-  return gulp.src(['node_modules/magnific-popup/dist/magnific-popup.css', 'scss/master.scss'])
+  return gulp.src(['node_modules/magnific-popup/dist/magnific-popup.css', 'node_modules/highlight.js/styles/tomorrow-night-eighties.css', 'scss/master.scss'])
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       outputStyle: 'expanded'
