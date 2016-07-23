@@ -27,20 +27,23 @@ ul {
   padding: 0;
 }
 
-pre, code {
-  background: #e8e8e8;
-  padding: 2px 4px;
-  border-radius: 4px;
+p.code-title {
+  text-align: center;
+  margin-bottom: 0;
+  background: #333;
+  border-radius: 8px 8px 0 0;
+  color: $white;
+
+  + pre.hljs {
+    margin-top: 1px;
+  }
 }
 
-pre {
-  padding: 10px;
-  overflow-x: auto;
-
-  code {
-    padding: 0;
-    border-radius: 0;
-  }
+code {
+  background: #333;
+  color: $white;
+  padding: 2px 4px;
+  border-radius: 4px;
 }
 
 a {
