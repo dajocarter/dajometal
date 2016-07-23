@@ -30,6 +30,8 @@ Now that Monit is installed, the next step is to turn it on so `cd /etc/monit`. 
 ## Configure Monit
 The first thing we'll need to do is edit the `monitrc` file so `sudo nano monitrc`. Now scroll down and uncomment the following lines:
 
+<p class="code-title">Enable Monit</p>
+
 ```bash
 set httpd port 2812 and
 use address localhost
@@ -37,6 +39,8 @@ allow localhost
 ```
 
 Then scroll down just a bit to under the Services section and uncomment the part about checking general system resources. **Be sure** to change `myhost.mydomain.tld` to match your server. So you should have the following lines uncommented:
+
+<p class="code-title">Monitoring the Server</p>
 
 ```bash
 check system myhost.mydomain.tld
