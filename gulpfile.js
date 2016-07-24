@@ -54,15 +54,7 @@ gulp.task('metalsmith', function() {
           } catch (__) {}
         }
 
-        // fallback to auto
-        try {
-          return '<pre class="hljs"><code>' +
-               hljs.highlightAuto(code, true).value +
-               '</code></pre>';
-        } catch (__) {}
-
-        // use external default escaping
-        return ''
+        return '<pre class="hljs"><code>' + markdown.utils.escapeHtml(code) + '</code></pre>';
       },
     }).use(emoji).use(footnote).use(subscripts).use(superscripts))
     .use(excerpts())
