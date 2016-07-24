@@ -7,6 +7,7 @@ var gulp = require('gulp'),
   drafts = require('./node_modules/metalsmith-drafts'),
   emoji = require('./node_modules/markdown-it-emoji'),
   excerpts = require('./node_modules/metalsmith-excerpts'),
+  footnote = require('./node_modules/markdown-it-footnote'),
   helpers = require('./node_modules/metalsmith-register-helpers'),
   hljs = require('./node_modules/highlight.js'),
   ignore = require('./node_modules/metalsmith-ignore'),
@@ -16,7 +17,9 @@ var gulp = require('gulp'),
   metadata = require('./node_modules/metalsmith-metadata'),
   pagination = require('./node_modules/metalsmith-pagination'),
   permalinks = require('./node_modules/metalsmith-permalinks'),
-  sitemap = require('./node_modules/metalsmith-sitemap');
+  sitemap = require('./node_modules/metalsmith-sitemap'),
+  subscripts = require('./node_modules/markdown-it-sub'),
+  superscripts = require('./node_modules/markdown-it-sup');
 
 gulp.task('metalsmith', function() {
   Metalsmith(__dirname)
@@ -61,7 +64,7 @@ gulp.task('metalsmith', function() {
         // use external default escaping
         return ''
       },
-    }).use(emoji))
+    }).use(emoji).use(footnote).use(subscripts).use(superscripts))
     .use(excerpts())
     .use(permalinks({
       relative: false,
