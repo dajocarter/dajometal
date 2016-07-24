@@ -25,13 +25,15 @@ $(document).ready(function() {
       interrupt:true
     });
   });
-
-  $(window).on('load resize', function() {
-    var profile = document.querySelector('.profile');
-    var width = profile.offsetWidth;
-    profile.style.height = width + 'px';
-    return;
-  });
+  
+  if (location.pathname == '/') {
+    $(window).on('load resize', function() {
+      var profile = document.querySelector('.profile');
+      var width = profile.offsetWidth;
+      profile.style.height = width + 'px';
+      return;
+    });
+  }
 
 
   if ($(window).width() > 767) {
