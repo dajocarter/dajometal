@@ -12,7 +12,7 @@ This is as easy as `sudo apt-get install monit`. Just a heads-up to ServerPilot 
 
 Now that Monit is installed, the next step is to turn it on so `cd /etc/monit`. If you `ls` here, you'll see the following directory structure:
 
-<p class="code-title">Monit File Structure</p>
+<p class="code-title">/etc/monit/</p>
 
 ```bash
 /etc/monit/
@@ -30,7 +30,7 @@ Now that Monit is installed, the next step is to turn it on so `cd /etc/monit`. 
 ## Configure Monit
 The first thing we'll need to do is edit the `monitrc` file so `sudo nano monitrc`. Now scroll down and uncomment the following lines:
 
-<p class="code-title">Enable Monit</p>
+<p class="code-title">/etc/monit/.monitrc</p>
 
 ```bash
 set httpd port 2812 and
@@ -40,7 +40,7 @@ allow localhost
 
 Then scroll down just a bit to under the Services section and uncomment the part about checking general system resources. **Be sure** to change `myhost.mydomain.tld` to match your server. So you should have the following lines uncommented:
 
-<p class="code-title">Monitoring the Server</p>
+<p class="code-title">/etc/monit/.monitrc</p>
 
 ```bash
 check system myhost.mydomain.tld
@@ -54,6 +54,8 @@ check system myhost.mydomain.tld
 ```
 
 Now that Monit is set up, we need to configure it to monitor our chosen services. If you read the `monitrc` file, you would have found that the last line is to include any files in the `conf.d` folder. This is where we'll put our custom services file so `sudo nano conf.d/services`. You can check out Monit's [configuration examples](https://mmonit.com/wiki/Monit/ConfigurationExamples) but here's my file:
+
+<p class="code-title">/etc/monit/.monitrc</p>
 
 ```bash
 check process nginx with pidfile /var/run/nginx-sp.pid
@@ -80,6 +82,8 @@ The `-sp` suffix is if you're using ServerPilot, but if you're not just leave it
 ## Send Monit Alerts to Slack
 The first thing you'll have to do is set up an Incoming Webhook with your Slack team and copy the url for later. Now we'll configure a payload to send to Slack. So from still within the `/etc/monit` directory, go ahead and `sudo nano slack.sh`. **Be sure** to change the channel, username, and emoji name to your choosing.
 
+<p class="code-title">/etc/monit/slack.sh</p>
+
 ```bash
 #!/bin/sh
 /usr/bin/curl \
@@ -95,6 +99,8 @@ The first thing you'll have to do is set up an Incoming Webhook with your Slack 
 ```
 
 Now we need to make sure that Monit can execute this script so `chmod 744 slack.sh`. Next, we need to tell Monit to run the Slack script when it needs to send an alert so `sudo nano monitrc`. In the section about checking general system resources, replace `then alert` with `then exec "/etc/monit/slack.sh" else if succeeded then exec "/etc/monit/slack.sh"`. At the end it should look like this:
+
+<p class="code-title">/etc/monit/.monitrc</p>
 
 ```bash
 check system myhost.mydomain.tld
