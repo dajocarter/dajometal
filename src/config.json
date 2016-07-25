@@ -145,21 +145,21 @@
     "gallery": [{
       "title": "CTA and Testimonials",
       "image": "freshfork1.png",
-      "description": "This is an example description."
+      "description": "The home page of The Fresh Fork features a quick 3-Step instructional section, a large Call To Action for new users, and a sliding testimonials section to further induce visitors to order meals."
     }, {
       "title": "Rotating Menu",
       "image": "freshfork2.png",
-      "description": "This is an example description."
+      "description": "The Fresh Fork offers a weekly rotating menu for their customers. The menus automatically rotate every Thursday night thanks to a Cron job. Toggles are available to show meals by week and category."
     }, {
       "title": "Calendar Ordering",
       "image": "freshfork3.png",
-      "description": "This is an example description."
+      "description": "Because of the weekly rotating menus, it is imperative to ask the user for their preferred pick-up or delivery date in order to show the correct menu. The calendar disables holidays and any dates that have reached the maximum amount of daily orders. The system saves the selected date as a cookie for any potential subsequent visits, but replaces the cookie if another date is selected."
     }, {
       "title": "Shop Page",
       "image": "freshfork4.png",
-      "description": "This is an example description."
+      "description": "Once users select a date, they then select a meal plan that is composed of different categories and sizes. The Fresh Fork is integrated with a local gym to offer certified diet-approved meal plans for those looking to trim down."
     }],
-    "description": "This is an example description."
+    "description": "The Fresh Fork is a local meal-prep business built on top of Wordpress and WooCommerce. It eschews the traditional form of e-commerce websites and offers a dynamic menu based off of the selected pick-up or delivery date. This one was a doozy!"
   }, {
     "title": "my brain on anatomy",
     "url": "mybrainonanatomy.com",
