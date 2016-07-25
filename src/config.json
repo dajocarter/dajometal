@@ -184,22 +184,22 @@
     "screenshot": "lessonzest.png",
     "year": "2016",
     "tags": [
-      "WordPress"
+      "WordPress, Stripe, Custom Post Types, Subscription-Based Content"
     ],
     "gallery": [{
       "title": "Lesson Modules",
       "image": "lessonzest1.png",
-      "description": "This is an example description."
+      "description": "This page archives all of the available Lesson Modules. The list is paginated for users that have all Modules available, while other members only see modules that contain one of the 10 Lessons available for a free trial."
     }, {
       "title": "Lessons",
       "image": "lessonzest2.png",
-      "description": "This is an example description."
+      "description": "This page archives of the Lessons available within a module. Premium users see all 10 Lessons while others will only see those available for a free trial."
     }, {
       "title": "Lesson",
       "image": "lessonzest3.png",
-      "description": "This is an example description."
+      "description": "Individual Lesson pages consist of attributes the lesson administrator most likely wants to see like cost, difficulty, and a list of materials needed. Also featured are photos and videos along with instructions as well as the Core Criteria the lessons meets for educational purposes."
     }],
-    "description": "This is an example description."
+    "description": "Lesson Zest is a subscription-based website built on top of WordPress. Featuring free trials, as well as monthly and annual subscriptions, Lesson Zest integrates Stripe for payment handling. The crux of Lesson Zest is that users gain access to a wide array of Lesson Modules that contain 10 Lessons each for users to easily create fun activities for after-school programs."
   }],
   "social": [{
     "link": "mailto:dajocarter@gmail.com",
