@@ -166,18 +166,18 @@
     "screenshot": "mboa.png",
     "year": "2015",
     "tags": [
-      "WordPress", "Angular 1"
+      "Angular 1", "Firebase"
     ],
     "gallery": [{
       "title": "Firebase-Powered Quiz",
       "image": "mboa1.png",
-      "description": "This is an example description."
+      "description": "MBOA features a simple five-question quiz powered by Firebase. When the quiz is submitted, the users can see whether or not they got each question right as well as see the percentage of users that answered each option. This feedback is hidden until submission and reveals itself with a smooth transition."
     }, {
       "title": "Immediate Feedback",
       "image": "mboa2.png",
-      "description": "This is an example description."
+      "description": "The individual pages of MBOA feature instant feedback for the user. Users can receive hints for most questions and toggle the visibility of those hints. In addition, a green checkmark appears when they've typed the correct answer. Text fields also have the capability to appoint multiple answers as correct."
     }],
-    "description": "This is an example description."
+    "description": "My Brain On Anatomy is a \"choose-your-own-adventure\" website built with Angular v1. The original concept of the website was executed with a Word document and I had the pleasure of transitioning it to a website for greater accessibility."
   }, {
     "title": "lesson zest",
     "url": "lessonzest.com",
