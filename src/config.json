@@ -205,42 +205,42 @@
     "link": "mailto:dajocarter@gmail.com",
     "title": "Email",
     "handle": "dajocarter@gmail.com",
-    "icon": "icon-envelope"
+    "icon": "fa-envelope"
   }, {
     "link": "//github.com/dajocarter",
     "title": "GitHub",
     "handle": "@dajocarter",
-    "icon": "icon-github"
+    "icon": "fa-github"
   }, {
     "link": "//twitter.com/dajocarter",
     "title": "Twitter",
     "handle": "@dajocarter",
-    "icon": "icon-twitter"
+    "icon": "fa-twitter"
   }, {
     "link": "//instagram.com/dajocarter",
     "title": "Instagram",
     "handle": "@dajocarter",
-    "icon": "icon-instagram"
+    "icon": "fa-instagram"
   }],
   "sharing": [{
     "link": "mailto:dajocarter@gmail.com",
     "title": "Email",
-    "icon": "icon-envelope"
+    "icon": "fa-envelope"
   }, {
     "link": "//www.facebook.com/sharer/sharer.php?u=",
     "title": "Facebook",
-    "icon": "icon-facebook"
+    "icon": "fa-facebook"
   }, {
     "link": "//plus.google.com/share?url=",
     "title": "GooglePlus",
-    "icon": "icon-google-plus"
+    "icon": "fa-google-plus"
   }, {
     "link": "//www.reddit.com/r/webdev/submit?url=",
     "title": "Reddit",
-    "icon": "icon-reddit-alien"
+    "icon": "fa-reddit-alien"
   }, {
     "link": "//twitter.com/share?url=",
     "title": "Twitter",
-    "icon": "icon-twitter"
+    "icon": "fa-twitter"
   }]
 }
