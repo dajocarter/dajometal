@@ -11,11 +11,21 @@ So you've built a static site, but now you need somewhere to host it. Luckily, h
 
 Because I said so. No Mom, it's because Netlify *really is* better than the other options. Let's go through the hosting providers and see why I *didn't* pick them. The first provider I looked at was [GitHub Pages](https://pages.github.com/). That's because I was already using them with a Jekyll site and it's **FREE**! I didn't go with them because the lack of ability to customize. Sure, I can use a custom domain, but I can't get SSL on it. I also don't like to have separate branches for the build and source directories, but that's more of a personal preference (and probably a lack of git skills). I enjoy being able to push my updates and seeing them deploy instantly, but I found other options that do just that.
 
-In my search for a hosting provider, I was first led to [Surge](https://surge.sh).
+In my search for a hosting provider, I was first led to [Surge](https://surge.sh) and their simple, single-command publishing. After installing with `npm`, just `cd` into any directory you want to host and run `surge`. Now you have a website running on a random subdomain of theirs in a matter of seconds. They're a great option for spinning something up and seeing how it looks, but I didn't get what I wanted from them out of a hosting provider. They offer custom domains for free, but you'll have to chalk up $13/mo for SSL on that custom domain and not get that much more. While I may not have went with them, they did open my eyes to this kind of simple deployment.
 
-The next provider I came across was [Pubstorm](https://pubstorm.com).
+The next provider I looked at was [PubStorm](https://pubstorm.com). They stepped it up a notch by offering SSL for free on your custom domain, *but* they took a step back with a PubStorm watermark (they do fade it out after about 30 seconds). Another advantage of PubStorm is its price. Their only paid tier is $5/mo and you get a few upgrades but nothing to write home to mom about. I'd honestly just stay on the free tier. So PubStorm was a step in the right direction, but I still felt limited.
 
-Finally, I discovered [Netlify](https://www.netlify.com).
+When I eventually came across [Netlify](https://www.netlify.com) I was rather impressed by them compared to their competitors. They have a sufficient amount of posts on their blog, and the most dense documentation which also means more customization. Their UI is nice and easy to work with, and the features they offer improve my development process. With all of this considered, I feel they give they give me the most bang for my buck.
+
+## Comparison Overview
+
+|                    | GitHub Pages | Free Surge | Paid Surge | Free PubStorm | Paid PubStorm | Free Netlify | Paid Netlify |
+|:-------------------|:------------:|:----------:|:----------:|:-------------:|:-------------:|:------------:|:------------:|
+| Cost               |  :moneybag:  | :moneybag: |   $5/mo    |  :moneybag:   |    $13/mo     |  :moneybag:  |   $7.50/mo   |
+| Custom Domain      |  :fa-check:  | :fa-check: | :fa-check: |  :fa-check:   |  :fa-check:   |  :fa-check:  |  :fa-check:  |
+| Custom Domain SSL  |  :fa-times:  | :fa-times: | :fa-check: |  :fa-check:   |  :fa-check:   |  :fa-check:  |  :fa-check:  |
+| Asset Optimization |  :fa-times:  | :fa-times: | :fa-times: |  :fa-check:   |  :fa-check:   |  :fa-check:  |  :fa-check:  |
+
 
 ## Getting Started with Netlify
 
