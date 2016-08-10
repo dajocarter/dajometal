@@ -6,6 +6,7 @@ var gulp = require('gulp'),
   drafts = require('./node_modules/metalsmith-drafts'),
   emoji = require('./node_modules/markdown-it-emoji'),
   excerpts = require('./node_modules/metalsmith-excerpts'),
+  fontawesome = require('./node_modules/markdown-it-fontawesome'),
   footnote = require('./node_modules/markdown-it-footnote'),
   helpers = require('./node_modules/metalsmith-register-helpers'),
   hljs = require('./node_modules/highlight.js'),
@@ -54,7 +55,7 @@ gulp.task('metalsmith', function() {
 
         return '<pre class="hljs"><code>' + markdown.utils.escapeHtml(code) + '</code></pre>';
       },
-    }).use(emoji).use(footnote).use(subscripts).use(superscripts))
+    }).use(emoji).use(fontawesome).use(footnote).use(subscripts).use(superscripts))
     .use(excerpts())
     .use(permalinks({
       relative: false,
