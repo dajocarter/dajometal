@@ -74,22 +74,22 @@
     "screenshot": "necter.jpg",
     "year": "2015",
     "tags": [
-      "Ionic", "Angular 1", "Firebase", "Pushwoosh"
+      "Ionic 1", "Angular 1", "Firebase", "Pushwoosh"
     ],
     "gallery": [{
       "title": "Group-Based Tinder",
       "image": "necter1.jpg",
-      "description": "Necter allows users to form groups of up to five Facebook friends and swipe through other groups in their area similar to Tinder."
+      "description": "Necter allows users to form groups of up to five Facebook friends and swipe through other groups in their area similar to Tinder. Group locations are based off of the last recorded position of the group owner. Groups can have a group image or a composition of their Facebook photos as shown above. Other groups can see this along with the group's name, average age, and distance from them."
     }, {
       "title": "Connect With Others",
       "image": "necter2.jpg",
-      "description": "This is an example description."
+      "description": "This is the analog to Tinder's \"It's a Match!\" screen. In this group setting, two members of each group must swipe right on each other to trigger a connection. The last of those four people sees the Connection screen and the rest of members in the two groups are alerted of the connection. From this screen, users can either keep browsing groups or enter a private chat room with the other group."
     }, {
       "title": "Chat Amongst Yourselves",
       "image": "necter3.jpg",
-      "description": "This is an example description."
+      "description": "Every group receives their own personal chat room modeled after iOS Messages. Every time a group makes a connection, a private chat room between the two groups is made. A side menu exists consisting of the list of group chats the user belongs to along with an alert showing the number of unread messages. If a group owner decides to block another group, they are immediately disconnected with that group and their chat room is deleted."
     }],
-    "description": "This is an example description."
+    "description": "Necter is a group-based Tinder-like hybrid mobile app available on iOS and Android. It was built with the Ionic framework and Angular with Firebase as a backend and using GeoFire for geolocation, Facebook for user authentication, and Pushwoosh for push notifications. This was my first assignment at Tribeswell and I was the sole developer for the project."
   }, {
     "title": "new moon cottage",
     "url": "newmooncottage.com",
