@@ -15,26 +15,14 @@ In my search for a hosting provider, I was first led to [Surge](https://surge.sh
 
 The next provider I looked at was [PubStorm](https://pubstorm.com). They stepped it up a notch by offering SSL for free on your custom domain, *but* they took a step back with a PubStorm watermark (they do fade it out after about 30 seconds). Another advantage of PubStorm is its price. Their only paid tier is $5/mo and you get a few upgrades but nothing to write home to mom about. I'd honestly just stay on the free tier. So PubStorm was a step in the right direction, but I still felt limited.
 
+## Why Netlify?
+
 When I eventually came across [Netlify](https://www.netlify.com) I was rather impressed by them compared to their competitors. They have a sufficient amount of posts on their blog, and the most dense documentation which also means more customization. Their UI is nice and easy to work with, and the features they offer improve my development process. With all of this considered, I feel they give they give me the most bang for my buck.
 
-## Comparison Overview
+Netlify makes sure deployment is one less thing to worry about for you. Go over Slack notifications and include a screenshot of their beauty. Talk about how awesome the new live-preview feature is for staging new development features.
 
-|                    | GitHub Pages | Free Surge | Paid Surge | Free PubStorm | Paid PubStorm | Free Netlify | Paid Netlify |
-|:-------------------|:------------:|:----------:|:----------:|:-------------:|:-------------:|:------------:|:------------:|
-| Cost               |  :moneybag:  | :moneybag: |   $5/mo    |  :moneybag:   |    $13/mo     |  :moneybag:  |   $7.50/mo   |
-| Custom Domain      |  :fa-check:  | :fa-check: | :fa-check: |  :fa-check:   |  :fa-check:   |  :fa-check:  |  :fa-check:  |
-| Custom Domain SSL  |  :fa-times:  | :fa-times: | :fa-check: |  :fa-check:   |  :fa-check:   |  :fa-check:  |  :fa-check:  |
-| Asset Optimization |  :fa-times:  | :fa-times: | :fa-times: |  :fa-check:   |  :fa-check:   |  :fa-check:  |  :fa-check:  |
-
+Talk about being able to customize the headers of your site. Can add webhooks for all sorts of crazy integration. Is there something you find useful that I'm not using?
 
 ## Getting Started with Netlify
 
 Explain how to get started with Netlify. Easy sign up process. Connect your github/gitlab/bitbucket repository. Optionally choose a task that runs the build. Hook up your asset optimization. Push and deploy!
-
-## Using Netlify to Improve Your Development Worflow
-
-Whaaat, how's hosting going to improve my workflow? Netlify makes sure deployment is one less thing to worry about for you. Go over Slack notifications and include a screenshot of their beauty. Talk about how awesome the new live-preview feature is for staging new development features.
-
-## What Else Is There?
-
-Talk about being able to customize the headers of your site. Can add webhooks for all sorts of crazy integration. Is there something you find useful that I'm not using?
