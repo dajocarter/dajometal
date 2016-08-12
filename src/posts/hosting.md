@@ -1,7 +1,7 @@
 ---
 title: 'Hosting My Static Site'
 description: 'Why I chose Netlify to host my static site over Pubstorm, Surge, and GitHub.'
-published: 2016-07-23T22:00:00-04:00
+published: 2016-08-12T22:00:00-04:00
 layout: post.hbs
 ---
 
