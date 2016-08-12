@@ -119,6 +119,14 @@ article {
       font-size: 0.75rem;
     }
   }
+
+  img {
+    max-width: 90%;
+    width: 100%;
+    height: auto;
+    margin: 1rem auto;
+    display: block;
+  }
 }
 
 .pagination {
