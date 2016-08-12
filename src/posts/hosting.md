@@ -21,7 +21,7 @@ When I eventually came across [Netlify](https://www.netlify.com) I was rather im
 
 Netlify makes sure deployment is one less thing to worry about. They have an **awesome** new feature that deploys any branch to a unique URL. Now when I need to add a new feature, I create a new branch, push my changes, check the result on a unique domain, merge the changes, and have it deployed instantly. What's even better is that they use *atomic* deploys so you're site doesn't look out of sorts during the build, unlike uploading over (S)FTP. One of my favorite features is their sexy Slack notifications.
 
-![Netlify Slack Notifications](//localhost:3000/img/slack-notifications.png "Netlify Slack Notifications")
+![Netlify Slack Notifications](/img/slack-notifications.png "Netlify Slack Notifications")
 
 This is not only a cool feature, but it also speeds up my development process. Usually, I set up a local domain, a staging domain, and a live domain, then set up some continuous development with [Codeship](https://codeship.com) and try my best to keep it all maintained. Although it's been life saving in most instances, it's certainly a huge headache to deal with. Netlify solved this problem for me by creating the one-off unique URLS for staging that I can quickly assess by clicking the link on my Slack notifications. Once I deem it a success, I can merge the changes and be confident the live version is up-to-date and looks good :sunglasses:
 
