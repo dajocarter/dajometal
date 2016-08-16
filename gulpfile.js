@@ -83,7 +83,7 @@ gulp.task('metalsmith', function() {
     }))
     .use(layouts({
       engine: 'handlebars',
-      default: '_hbs/default.hbs',
+      default: 'default.hbs',
       directory: '_hbs/templates',
       partials: '_hbs/partials',
       rename: true
