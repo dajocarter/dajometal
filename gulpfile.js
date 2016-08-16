@@ -120,6 +120,7 @@ gulp.task('sass', ['metalsmith'], function() {
     .pipe($.sass({
       outputStyle: 'expanded'
     }).on('error', $.sass.logError))
+    .pipe($.concat('master.css'))
     .pipe($.autoprefixer({
       browsers: [
         'ie >= 10',
@@ -133,6 +134,18 @@ gulp.task('sass', ['metalsmith'], function() {
         'bb >= 10'
       ]
     }))
+    .pipe($.uncss({
+      html: [
+        'https://www.dajocarter.com/404.html',
+        'https://www.dajocarter.com/blog/index.html',
+        'https://www.dajocarter.com/index.html',
+        'https://www.dajocarter.com/blog/hosting-my-static-site/index.html',
+        'https://www.dajocarter.com/blog/using-monit-and-slack-to-monitor-your-server/index.html',
+        'https://www.dajocarter.com/blog/my-metalsmith-worflow/index.html',
+        'https://www.dajocarter.com/blog/1/index.html'
+      ]
+    }))
+    .pipe($.cssnano())
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('build/css'))
     .pipe(browserSync.stream());
