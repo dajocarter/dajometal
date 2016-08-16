@@ -114,12 +114,23 @@ gulp.task('js', ['metalsmith'], function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task('sass', ['metalsmith'], function() {
-  return gulp.src(['node_modules/magnific-popup/dist/magnific-popup.css', 'node_modules/highlight.js/styles/agate.css', '_assets/scss/master.scss'])
+gulp.task('sass:vendor', ['metalsmith'], function() {
+  return gulp.src(['node_modules/magnific-popup/dist/magnific-popup.css'])
+    .pipe($.sourcemaps.init())
+    .pipe($.concat('vendor.css'))
+    .pipe($.cssnano())
+    .pipe($.sourcemaps.write('.'))
+    .pipe(gulp.dest('build/css'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('sass:uncss', ['metalsmith'], function() {
+  return gulp.src(['node_modules/highlight.js/styles/agate.css', '_assets/scss/master.scss'])
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       outputStyle: 'expanded'
     }).on('error', $.sass.logError))
+    .pipe($.concat('master.css'))
     .pipe($.autoprefixer({
       browsers: [
         'ie >= 10',
@@ -133,6 +144,18 @@ gulp.task('sass', ['metalsmith'], function() {
         'bb >= 10'
       ]
     }))
+    .pipe($.uncss({
+      html: [
+        'https://www.dajocarter.com/404.html',
+        'https://www.dajocarter.com/blog/index.html',
+        'https://www.dajocarter.com/index.html',
+        'https://www.dajocarter.com/blog/hosting-my-static-site/index.html',
+        'https://www.dajocarter.com/blog/using-monit-and-slack-to-monitor-your-server/index.html',
+        'https://www.dajocarter.com/blog/my-metalsmith-worflow/index.html',
+        'https://www.dajocarter.com/blog/1/index.html'
+      ]
+    }))
+    .pipe($.cssnano())
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('build/css'))
     .pipe(browserSync.stream());
@@ -142,7 +165,7 @@ gulp.task('watch', function() {
   gulp.watch(['src/**/*.md', 'src/**/*.json', '_hbs/**/*.hbs'], ['metalsmith']).on('change', browserSync.reload);
   gulp.watch(['_assets/img/**/*.{png,PNG,jpg,JPG,jpeg,JPEG,gif,GIF}'], ['img']);
   gulp.watch(['_assets/js/**/*.js'], ['js']);
-  gulp.watch(['_assets/scss/**/*.scss'], ['sass']);
+  gulp.watch(['_assets/scss/**/*.scss'], ['sass:uncss']);
 });
 
 gulp.task('browserSync', function() {
@@ -152,6 +175,6 @@ gulp.task('browserSync', function() {
   });
 });
 
-gulp.task('build', ['img', 'js', 'sass']);
+gulp.task('build', ['img', 'js', 'sass:vendor', 'sass:uncss']);
 
 gulp.task('serve', ['build', 'browserSync', 'watch']);
